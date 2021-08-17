@@ -1,0 +1,8 @@
+body{
+    font-family: 'Titillium Web', sans-serif;
+}
+.navbar{
+    background-color: darkseagreen;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    min-height: 100px;
+}
