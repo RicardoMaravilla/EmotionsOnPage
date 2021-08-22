@@ -25,11 +25,11 @@ def db_connect():
     # Fetch all the rows in a list of lists.
     results = cursor.fetchall()
     for row in results:
-    id = row[0]
-    name = row[1]
-    email = row[2]
-   # Now print fetched result
-   print ("id = {0}, name = {1}, email = {1}".format(id,name,email))
+        id = row[0]
+        name = row[1]
+        email = row[2]
+    # Now print fetched result
+    print("id = {0}, name = {1}, email = {1}".format(id,name,email))
 
     # desconecta del servidor
     db.close()
