@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Plantilla básica de Bootstrap</title>
 
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <!-- CSS de Bootstrap -->
-  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
   <!--[if lt IE 9]>
