@@ -1,14 +1,40 @@
+body{
+    
+}
+.font{
+    font-size: 66px;
+    font-weight: 600;
+    line-height: 80px;
+}
+.font1{
+    font-size: 18px;
+    color:whitesmoke;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+.topmargin-xs{ margin-top: 15px;}
+.topmargin-sm{ margin-top: 30px;}
+.topmargin-lg{ margin-top: 60px;}
+
+.btn{
+    font-size: 25px;
+    padding: 15px 26px;
+    min-width: 160px;
+    border-radius: 2px;
+    display: inline-block;
+}
+.btn-light{
+    background-color: white;
+    color: black;
+    border: 2px solid #ffff;
+}
 .navbar{
     background-color: #ffff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
     min-height: 100px;
     font-size: x-large;
 }
-h1 {
-    font-size: x-large;
-    font-weight: 600;
-    line-height: 80px;
-}
+
 .nav-link{ color:black}
 .nav-link:hover{ color:black}
 .logo-page {
