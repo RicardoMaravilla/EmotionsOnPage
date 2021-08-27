@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <!-- CSS de Bootstrap -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -30,14 +30,14 @@
 <body>
   <nav class="navbar navbar-expand-lg ">
     <div class="container">
-      <a class="navbar-brand" href="#">Emotions On Page</a>
+      <a class="navbar-brand" href="#"><img src="{% static 'img/lg.png' %}" class="logo-page" alt="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <ion-icon name="menu-outline"></ion-icon>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item ">
             <a class="nav-link" href="http://127.0.0.1:8000/" id="home">Home </a>
           </li>
@@ -46,18 +46,31 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" id="Wikis">Wikis</a>
+            <a class="nav-link" href="#" id="Wikis">Wikis</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" id="wh">Want Help?</a>
+            <a class="nav-link" href="#" id="wh">Want Help?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" id="Abu">About us</a>
+            <a class="nav-link" href="#" id="Abu">About us</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <section id="hero">
+    <div class="container">
+      <div class="content-center">
+        <h1>Conoce tupersonalidad MBTI</h1>
+        <p>
+          MBTI son las siglas para referirnos al Myers-Briggs Type Indicator,
+          un instrumento diseñado para evaluar la personalidad a partir de nuestras
+          respuestas acerca de cómo nos sentimos o actuamos en situaciones particulares.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Librería jQuery requerida por los plugins de JavaScript -->
   <script src="http://code.jquery.com/jquery.js"></script>

@@ -1,12 +1,37 @@
-body{
-    font-family: 'Titillium Web', sans-serif;
-}
 .navbar{
-    background-color: darkseagreen;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    background-color: #ffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
     min-height: 100px;
+    font-size: x-large;
 }
+h1 {
+    font-size: x-large;
+    font-weight: 600;
+    line-height: 80px;
+}
+.nav-link{ color:black}
+.nav-link:hover{ color:black}
+.logo-page {
+    min-width: 60px;
+    max-width: 10px;
 
-h1 a, h2 a {
-    color: #C25100;
+}
+.navbar-toogler { font-size: 100px;}
+.navbar-toogler:focus{ outline: none;}
+
+#hero{
+    background-color: black;
+    background-image: url("{% static 'css/hero.jpg' %}");
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 700px;
+    color: white;
+    
+}
+.content-center{
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+    
+
 }
