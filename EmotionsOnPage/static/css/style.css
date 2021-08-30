@@ -47,7 +47,7 @@ body{
 
 #hero{
     background-color: black;
-    background-image: url("{% static 'css/hero.jpg' %}");
+    background-image: url('/static/img/hero.jpg');
     background-size: cover;
     padding-top: 90px;
     min-height: 700px;
