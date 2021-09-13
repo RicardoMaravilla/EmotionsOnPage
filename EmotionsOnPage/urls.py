@@ -21,8 +21,6 @@ from django.urls import path, include
 urlpatterns = [
     path('', views.index, name='index'),  # Acá
     path('admin/', admin.site.urls),
-    path("buscar_user/", users_views.buscar_user),
-    path('show_user/', users_views.show_user),
     path("register/", users_views.register_request, name="register"),
     path("login/", users_views.login_request, name="login"),
     path("logout/", users_views.logout_request, name= "logout"),

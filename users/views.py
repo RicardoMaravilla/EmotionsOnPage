@@ -38,11 +38,11 @@ def login_request(request):
 		else:
 			messages.error(request,"Invalid username or password.")
 	form = AuthenticationForm()
-	return render(request=request, template_name="index", context={"login_form":form})
+	return render(request=request, template_name="login.html", context={"login_form":form})
 
 def logout_request(request):
 	logout(request)
-	messages.info(request, "You have successfully logged out.") 
+	messages.info(request, "You have successfully logged out.")
 	return redirect("main:index")
 
 # Modificar para nombres en register
