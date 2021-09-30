@@ -1,0 +1,50 @@
+{% extends "header.html" %}
+
+{% block content %} 
+
+
+{% block title %}Change Password Page{% endblock title %}
+
+    <h2 style="font-size: 25px;font-weight: 600;color:white">Change Password</h2>
+    <div class="body_container box box--big">
+		<!-- form starts here -->
+		<form id="change-password-form" method="post" action="#">
+            {% csrf_token %}
+			<div class="agile-field-txt">
+				<label>
+					<i class="fa fa-user" aria-hidden="true"></i> old password </label>
+				<input id="old_password" name="old_password" placeholder="Enter your old password" required=""
+                                   type="text" class="form-control">
+			</div>
+			<div class="agile-field-txt">
+				<label>
+					<i class="fa fa-envelope" aria-hidden="true"></i> New Password </label>
+					<input name="new_password1" type="password" class="form-control"
+					   placeholder="Enter your new password " required="" id="new_password1">
+			</div>
+			<div class="agile-field-txt">
+				<label>
+					<i class="fa fa-envelope" aria-hidden="true"></i> New Password Confirmation </label>
+					<input name="new_password2" type="password" class="form-control"
+					   placeholder="Enter your new password " required="" id="new_password2">
+			</div>
+				{% if form.errors %}
+                    {% for field in form %}
+						{{field.name}}
+                        {% for error in field.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+			<div class="w3ls-bot">
+				<div class="form-end">
+					<input type="submit" value="Submit">
+				</div>
+				<div class="clearfix"></div>
+                <br/>
+
+			</div>
+
+		</form>
+	</div>
+{% endblock %}

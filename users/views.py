@@ -7,6 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from users.views_helpers import look_user
 from users.forms import NewUserForm
+from django.contrib.auth.forms import PasswordChangeForm #Pal password change
 
 # Create your views here.
 
@@ -45,9 +46,30 @@ def logout_request(request):
 	messages.info(request, "You have successfully logged out.")
 	return redirect("main:index")
 
+
 # Modificar para nombres en register
+
+
 # Agregar el cambio de password
+def change_psswd(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('login')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request=request, template_name="change_psswd.html", context={"change_psswd":form})
+
+
 # Login con email en vez de username
+
+
+
 """
 def login(request):
     email_user = request.GET["email"]
