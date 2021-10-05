@@ -12,24 +12,25 @@ body{
     line-height: 1.8;
     margin-bottom: 0;
 }
+
+
 .topmargin-xs{ margin-top: 15px;}
 .topmargin-sm{ margin-top: 30px;}
 .topmargin-lg{ margin-top: 60px;}
 
 .btn{
-    font-size: 25px;
+    font-size: 55px;
     padding: 15px 26px;
     min-width: 160px;
-    border-radius: 2px;
     display: inline-block;
-}
-.btn-light{
-    background-color: white;
+    background-color: rgb(170, 87, 159);
     color: black;
-    border: 2px solid #ffff;
+    border: 2px solid rgb(170, 87, 159);
 }
+
+
 .navbar{
-    background-color: #ffff;
+    background-color: rgb(172, 92, 68);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
     min-height: 100px;
     font-size: x-large;
@@ -37,17 +38,13 @@ body{
 
 .nav-link{ color:black}
 .nav-link:hover{ color:black}
-.logo-page {
-    min-width: 60px;
-    max-width: 10px;
 
-}
 .navbar-toogler { font-size: 100px;}
 .navbar-toogler:focus{ outline: none;}
 
 #hero{
     background-color: black;
-    background-image: url('/static/img/hero.png');
+    /*background-image: url('/static/img/hero.png');*/
     background-size: cover;
     padding-top: 90px;
     min-height: 700px;

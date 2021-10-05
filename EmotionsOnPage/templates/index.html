@@ -28,16 +28,32 @@
 </head>
 
 <body>
+  <header class="navbar navbar-expand-lg ">
+    <div class="container">
+      <a class="navbar-brand mb-0 h1" href="#">EMOTION ON PAGE</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <a href="#" class="btn btn-lg ml-auto">Sing Up</a>
+        <a href="#" class="btn btn-lg float-right">Login</a>
+        
+      </div>
+    </div>
+  </header>
+
   <nav class="navbar navbar-expand-lg ">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="{% static 'img/lg.png' %}" class="logo-page" alt="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <ion-icon name="menu-outline"></ion-icon>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav col-md-9 ml-md-auto">
           <li class="nav-item ">
             <a class="nav-link" href="http://127.0.0.1:8000/" id="home">Home </a>
           </li>
@@ -58,6 +74,7 @@
       </div>
     </div>
   </nav>
+  
 
   <section id="hero">
     <div class="container">
@@ -72,6 +89,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- Librería jQuery requerida por los plugins de JavaScript -->
   <script src="http://code.jquery.com/jquery.js"></script>
