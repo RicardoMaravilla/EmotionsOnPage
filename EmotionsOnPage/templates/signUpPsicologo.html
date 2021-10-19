@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up!</title>
+  <!-- CSS de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Vidaloka&display=swap" rel="stylesheet">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+<body class="background_2">
+  <div class="container">
+    <div class="row justify-content-center align-items-center text-center">
+      <!-- Start Title -->
+      <header class="col-sm-6">
+          <h1 class="title_dark m-3 p-3">Emotions on Page</h1>
+      </header>
+      <!-- End Title -->
+
+      <!-- Start form -->
+      <div class="form-row text-center p-5 border border-dark rounded">
+        <form>
+          <h3 class="col font-weight-normal m-4">¿Te gustaría ayudar a millones de personas con terapia online? ¡Únete a la comunidad!</h3>
+          <p class="col font-weight-normal">Querido psicólogo: <br> Regálanos tus datos, y en la brevedad nos pondremos en contacto contigo:</p>
+          <input type="text" class="col-sm-3 form-control m-3" id="nombre" placeholder="Tu nombre">
+          <input type="email" class="col-sm-3 form-control m-3" id="email" placeholder="Email">
+          <input type="number" class="col-sm-3 form-control m-3" id="number" placeholder="Teléfono">
+          <p class="col font-weight-normal">By clicking "sign up", or continuing with the other options below, you
+            agree to Emotions on Page’s, you agree to <a>Emotions on Page’s Terms</a> of Service and have read the Privacy
+            Policy</p><br>
+            <p class="col font-weight-normal">¿No eres psicólogo?  <a href="#" class="col font-weight-normal link_2">Regístrarme en Emotions on Page</a></p>
+           
+          <br>
+          <button type="button" class="col-sm-3 btn btn-outline-dark">Enviar</button>
+        </form>
+      </div>
+      <!-- End form -->
+      <footer>
+          <div class="row justify-content-start align-items-start m-2 p-3">
+          <div class="col-sm-1">
+            <a href="#" class="link_2">Privacidad</a>
+          </div>
+          <div class="col-sm-1 offset-1">
+            <a href="#" class="link_2">Términos</a>
+          </div>
+          <div class="col-sm-2 offset-2">
+            <p class="col font-weight-normal">Hecho con &hearts;</p>
+          </div>
+        </div>
+        </footer>
+    </div>
+  </div>
+  <!-- JS de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

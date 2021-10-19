@@ -1,0 +1,57 @@
+.background{
+    background-color: #222A68;
+}
+.background_2{
+    background-color: #E2ADF2;
+}
+.background_3{
+    background-color: #574AE2;
+}
+.background_4{
+    background-color: #654597;
+}
+.background_5{
+    background-color: #AB81CD;
+}
+.title_light{
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 50px;
+}
+.title_dark{
+    font-family: 'Lobster', cursive;
+    color: black;
+    font-size: 50px;
+}
+.subtitle{
+    font-family: 'Lobster', cursive;
+    font-family: 'Vidaloka', serif;
+    color: white;
+    /* color: rgb(235, 173, 38); */
+}
+.text{
+    color: white;
+}
+.link{
+    color: #E2ADF2;
+    text-decoration: underline;
+}
+.link:hover{
+    color: rgb(245, 180, 39);
+    text-decoration: underline;
+}
+.link_2{
+    color: #8F1CB3;
+    text-decoration: underline;
+}
+.link_2:hover{
+    color: #ACCAF2;
+    text-decoration: underline;
+}
+.link_3{
+    color: black;
+    text-decoration: none;
+}
+.filter-rose{
+    filter: invert(81%) sepia(10%) saturate(2976%) hue-rotate(208deg) brightness(101%) contrast(90%);
+}
