@@ -49,6 +49,12 @@ def logout_request(request):
 
 # Modificar para nombres en register
 
+#Funciones de prueba
+def register_user(request):
+	return render(request, "register_user.html")
+
+def register_psicologo(request):
+	return render(request, "register_psicologo.html")
 
 # Agregar el cambio de password
 def change_psswd(request):
