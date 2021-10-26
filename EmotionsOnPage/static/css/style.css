@@ -30,7 +30,7 @@ body{
 
 
 .navbar{
-    background-color: rgb(172, 92, 68);
+    background-color: salmon;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
     min-height: 100px;
     font-size: x-large;
