@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'bootstrap4',
+    'django_bootstrap_icons',
     'users',
     'questionary',
     'EmotionsOnPage',

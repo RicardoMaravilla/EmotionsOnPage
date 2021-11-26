@@ -1,0 +1,105 @@
+<!-- La página de inicio que verá el user al iniciar sesión -->
+{% extends "base.html" %}
+{% load bootstrap_icons %}
+{% block logo-position %}
+    <div class="row justify-content-around align-item-end m-3 p-3">
+        <div class="col offset-sm-4">
+      {% endblock %}
+{% block nav %}
+<div class="col-1">
+ <!-- Start Dropdown user -->
+    <div class="dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="user-menu" role="button">
+            {% bs_icon 'person-circle' size='40px' color='cornsilk'%}
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Perfil</a></li>
+            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+        </ul>
+        </div>    
+<!-- End Dropdown user -->
+</div>
+{% endblock %}
+{% block content %}
+<div class="container m-5">
+   <div class="row justify-content-center">
+       <div class="col offset-sm-5 font-weight-normal fs-2 text">
+           <a class="add-entry" href="#">
+               {% bs_icon 'plus-circle-fill' size='30px' color='#E2ADF2'%}
+            </a>
+            Agregar entrada
+       </div>      
+   </div>
+   <div class="row">
+       <div class="col-12 offset-sm-2">
+           <h3 class="fs-1 text">
+               Mis entradas
+           </h3>
+       </div>
+       <br>
+       <!-- Start table: Muestra registros desde la bdd -->
+        <table class="col-12 offset-sm-2 table-borderless table-striped table-hover text text-center">
+            <!-- <tr>
+                <th>Emoji</th>
+                <th>Fecha</th>
+                <th>Content</th>
+            </tr> -->
+            <tr>
+                <td>&#128546;</td>
+                <td>30-dic-2020</td>
+                <td>blablabla</td>
+            </tr>
+            <tr>
+                <td>&#128525;</td>
+                <td>30-dic-2020</td>
+                <td>blablabla</td>
+            </tr>   
+            <tr>
+                <td>&#128513;</td>
+                <td>30-dic-2020</td>
+                <td>blablabla</td>
+            </tr>   
+        </table>
+        <!-- End table: Muestra registros desde la bdd -->
+
+        <!-- Start estadisticas -->
+        <div class="col-12 m-5"></div>
+        <div class="col-12 offset-sm-2">
+            <h3 class="fs-1 text">
+                Mis estadísticas
+            </h3>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2">
+            <p class="emojis">&#128525; 4</p> 
+        </div>
+        <div class="col-2">
+            <p class="emojis">&#128513; 1</p>
+        </div>
+        <div class="col-2">
+            <p class="emojis">&#128528; 4</p>
+        </div>
+        <div class="col-2">
+            <p class="emojis">&#128545; 3</p>
+        </div>
+        <div class="col-2">
+            <p class="emojis">&#128546; 2</p>
+        </div>
+    
+        <!-- End estadisticas -->
+
+        <!-- Start Warnings -->
+        <div class="col-12 m-3"></div>
+        <div class="col-5 offset-sm-5 border border-danger p-4 rounded-3 text-center"> 
+            {% bs_icon 'info-circle-fill' size='50px' color='red'%}
+            <h3 class="fs-1 text">
+                ¿Estás bien?
+            </h3>
+            <p class="fs-3 text">Hemos notado que no te has sentido muy bien estos días. Quizá 
+                <a href="#" class="link-danger">este artículo</a> te haga sentir mejor 
+                {% bs_icon 'heart-fill' size='10px' color='red'%}</p>
+        </div>
+        <!-- End Warnings -->
+    </div>
+</div>
+{% endblock %}

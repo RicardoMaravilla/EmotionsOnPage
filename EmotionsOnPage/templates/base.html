@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}<title>Sign up!</title>{% endblock %}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Vidaloka&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <!-- CSS personalizado -->
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  <!-- CSS de Bootstrap -->
+  {# Cargamos la librería #}
+  {% load bootstrap4 %}
+
+  {# CSS Bootstrap #}
+  {% bootstrap_css %}
+</head>
+
+{% block background %}<body class="background">{% endblock %}
+  <div class="container">
+    <!-- Start Title -->
+    <header>
+      {% block logo-position %}
+    <div class="row justify-content-center align-item-center text-center">
+        <div class="col m-3 p-3">
+      {% endblock %}
+          <a href="{% url 'index' %}">
+            {% block logo-color %}
+            <h1 class="title_light">Emotions on Page</h1>
+            <!-- <img src="../static/img/lg.png" width="50%" height="50%" class="m-3"> -->
+            {% endblock %}</a>
+        </div>
+        {% block nav %}<div></div>{% endblock %}
+      </div>
+    </header>
+  </div>
+      <!-- End Title -->
+      {% block content %}{% endblock %}
+      <div class="container">
+      <footer>
+        <div class="row justify-content-start align-items-start m-2 p-3">
+        <div class="col-sm-1 col-md-1">
+          {% block link1 %}<a href="#" class="link">Privacidad</a>{% endblock %}
+        </div>
+        <div class="col-sm-1 offset-sm-1 col-lg-1">
+          {% block link2 %}<a href="#" class="link">Términos</a>{% endblock %}
+        </div>
+        <div class="col-sm-3 offset-sm-2">
+          {% block legend %}<p class="col font-weight-normal text">Hecho con &hearts;</p>{% endblock %}
+        </div>
+      </div>
+      </footer>
+    </div>
+    {# JS y jQuery Bootstrap #}
+    {% bootstrap_javascript jquery='full' %}
+    </body>
+    
+    </html>

@@ -4,6 +4,7 @@ beautifulsoup4==4.9.3
 colorama==0.4.4
 dj-database-url==0.5.0
 Django==3.2.6
+django-bootstrap-icons==0.7.3
 django-bootstrap4==3.0.1
 django-crispy-forms==1.12.0
 django-heroku==0.3.1
