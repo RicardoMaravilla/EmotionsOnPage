@@ -1,105 +1,180 @@
-<!-- La página de inicio que verá el user al iniciar sesión -->
+<!-- La página de inicio que verá el user al iniciar sesión 
+
+Contiene las opciones que solo un usuario logueado puede ver:
+    * Dropdown para opciones del usuario, ver entradas y cerrar sesión -->
+
 {% extends "base.html" %}
+{% block title %}<title>Dashboard</title>{% endblock %}
 {% load bootstrap_icons %}
 {% block logo-position %}
-    <div class="row justify-content-around align-item-end m-3 p-3">
-        <div class="col offset-sm-4">
+    <div class="row justify-content-around align-item-center m-3 p-3">
+        <div class="col">
       {% endblock %}
 {% block nav %}
-<div class="col-1">
- <!-- Start Dropdown user -->
-    <div class="dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="user-menu" role="button">
-            {% bs_icon 'person-circle' size='40px' color='cornsilk'%}
-        </a>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Perfil</a></li>
-            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-        </ul>
-        </div>    
-<!-- End Dropdown user -->
-</div>
+<!-- Start Dropdown user -->
+<div class="col-1 dropdown">
+    {% block user-icon-color %}
+    <a class="nav-link" data-toggle="dropdown" id="user-menu" role="button">
+        {% bs_icon 'person-circle' size='30px' color='#E2ADF2'%}
+    </a>
+    {% endblock %}
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item border-bottom text-secondary text-center fw-bold" href="#">Ajustes</a></li>
+        <li><a class="dropdown-item" href="#">Cuenta</a></li>
+        <li><a class="dropdown-item" href="#">Correo</a></li>
+        <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+        <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>
+        <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="#">Cerrar sesión</a></li>
+    </ul>      
+    </div>
+    <!-- End Dropdown user -->
 {% endblock %}
 {% block content %}
 <div class="container m-5">
-   <div class="row justify-content-center">
-       <div class="col offset-sm-5 font-weight-normal fs-2 text">
-           <a class="add-entry" href="#">
-               {% bs_icon 'plus-circle-fill' size='30px' color='#E2ADF2'%}
-            </a>
-            Agregar entrada
-       </div>      
+   <div class="row justify-content-center m-3">
+        <h3 class="col-5 fs-1 text-white">
+            Mis entradas
+        </h3>
+        <a href="{% url 'journal' %}"class="col">
+            {% bs_icon 'plus-square-fill' size='33px' color='#E2ADF2'%}
+        </a>
    </div>
-   <div class="row">
-       <div class="col-12 offset-sm-2">
-           <h3 class="fs-1 text">
-               Mis entradas
-           </h3>
-       </div>
-       <br>
-       <!-- Start table: Muestra registros desde la bdd -->
-        <table class="col-12 offset-sm-2 table-borderless table-striped table-hover text text-center">
-            <!-- <tr>
-                <th>Emoji</th>
-                <th>Fecha</th>
-                <th>Content</th>
-            </tr> -->
-            <tr>
-                <td>&#128546;</td>
-                <td>30-dic-2020</td>
-                <td>blablabla</td>
-            </tr>
-            <tr>
-                <td>&#128525;</td>
-                <td>30-dic-2020</td>
-                <td>blablabla</td>
-            </tr>   
-            <tr>
-                <td>&#128513;</td>
-                <td>30-dic-2020</td>
-                <td>blablabla</td>
-            </tr>   
-        </table>
-        <!-- End table: Muestra registros desde la bdd -->
+   <!-- Start table: Muestra registros desde la bdd -->
 
-        <!-- Start estadisticas -->
+    <div class="row">
+        <div class="col scroll">
+            <table class="table table-hover text-white text-center m-3" height="100px">
+                <!-- <thead>
+                    <tr>
+                        <th>Emoji</th>
+                        <th>Fecha</th>
+                        <th>Content</th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    <tr>
+                        <td>&#128546;</td>
+                        <td>20-08-2021</td>
+                    </tr>
+                    <tr>
+                        <td>&#128525;</td>
+                        <td>20-08-2021</td>
+                    </tr>   
+                    <tr>
+                        <td>&#128513;</td>
+                        <td>20-08-2021</td>
+                    </tr>   
+                    <tr>
+                        <td>&#128513;</td>
+                        <td>20-08-2021</td>
+                    </tr>   
+                    <tr>
+                        <td>&#128513;</td>
+                        <td>20-08-2021</td>
+                    </tr>   
+                    <tr>
+                        <td>&#128513;</td>
+                        <td>20-08-2021</td>
+                    </tr>   
+                    <tr>
+                        <td>&#128513;</td>
+                        <td>20-08-2021</td>
+                    </tr>   
+                    <tr>
+                        <td>&#128513;</td>
+                        <td>20-08-2021</td>
+                    </tr>   
+                </tbody>
+            </table>
+        </div>
+         <p class="col border border-light text-white p-3 scroll">
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+    
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+    
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        </p>
+    </div>
+<!-- End table: Muestra registros desde la bdd --> 
+
+<!--Start: Botones para editar y eliminar entradas  -->
+    <div class="row justify-content-center">
+        <div class="col-10"></div>
+        <div class="col-1 text-end">
+            <button type="button" class="buttons bg-danger" data-toggle="modal" data-target="#borrar_entrada">{% bs_icon 'trash' size='25px' color='#222A68'%}</button>    
+        </div>
+        <div class="col-1 text-end">
+            <button type="button" class="buttons bg-info">{% bs_icon 'pencil' size='25px' color='#222A68'%}</button>    
+        </div>
+    </div>
+<!--End: Botones para editar y eliminar entradas  -->
+
+<!-- Start: Popup confirmación del delete -->
+<!-- Trigger the modal with a button -->
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <!-- End: Popup confirmación del delete -->
+
+<!-- Start estadisticas -->
+    <div class="row">
         <div class="col-12 m-5"></div>
-        <div class="col-12 offset-sm-2">
-            <h3 class="fs-1 text">
+        <div class="col-12 m-3">
+            <h3 class="fs-1 text-white">
                 Mis estadísticas
             </h3>
         </div>
-        <div class="col-2"></div>
-        <div class="col-2">
+        <div class="col">
             <p class="emojis">&#128525; 4</p> 
         </div>
-        <div class="col-2">
+        <div class="col">
             <p class="emojis">&#128513; 1</p>
         </div>
-        <div class="col-2">
+        <div class="col">
             <p class="emojis">&#128528; 4</p>
         </div>
-        <div class="col-2">
+        <div class="col">
             <p class="emojis">&#128545; 3</p>
         </div>
-        <div class="col-2">
+        <div class="col">
             <p class="emojis">&#128546; 2</p>
-        </div>
-    
-        <!-- End estadisticas -->
+        </div>  
+        <div class="col-12 m-3"></div> <!--Necesario para el margin-->
+    </div>
+    <!-- End estadisticas -->    
 
-        <!-- Start Warnings -->
-        <div class="col-12 m-3"></div>
-        <div class="col-5 offset-sm-5 border border-danger p-4 rounded-3 text-center"> 
-            {% bs_icon 'info-circle-fill' size='50px' color='red'%}
-            <h3 class="fs-1 text">
+    <!-- Start Sugerencias -->    
+    <div class="row justify-content-center">
+        <div class="col-5 text-center"> 
+            {% bs_icon 'exclamation-diamond-fill' size='50px' color='red'%}
+            <h3 class="fs-1 text-white">
                 ¿Estás bien?
             </h3>
-            <p class="fs-3 text">Hemos notado que no te has sentido muy bien estos días. Quizá 
+            <p class="fs-3 text-white">Hemos notado que no te has sentido muy bien estos días. Quizá 
                 <a href="#" class="link-danger">este artículo</a> te haga sentir mejor 
                 {% bs_icon 'heart-fill' size='10px' color='red'%}</p>
         </div>
-        <!-- End Warnings -->
-    </div>
+    </div>   
+    <!-- End Sugerencias -->
 </div>
 {% endblock %}

@@ -30,20 +30,21 @@
     color: black;
     font-size: 50px;
 }
+.title_dark:hover{
+    color: rgb(56, 168, 250);
+    text-decoration: none;
+}
 .subtitle{
     font-family: 'Lobster', cursive;
     font-family: 'Vidaloka', serif;
     color: white;
     /* color: rgb(235, 173, 38); */
 }
-.text{
-    color: white;
-}
-.text_2{
-    color: black;
-}
 .text_3{
     color: rgb(245, 180, 39);
+}
+.text_4{
+    color: rgb(52, 52, 52);
 }
 .link{
     color: #E2ADF2;
@@ -73,16 +74,23 @@
     color: #8F1CB3;
     text-decoration: underline;
 }
-.filter-rose{
-    filter: invert(81%) sepia(10%) saturate(2976%) hue-rotate(208deg) brightness(101%) contrast(90%);
-}
-.add-entry{
-    margin: 30px;
-}
-.add-entry:hover{
-    height: 50%;
+.borde{
+    border-radius: 10px;
 }
 .emojis{
-    font-size: 40px; 
+    font-size: 30px; 
     color: rgb(245, 180, 39); 
+}
+.scroll{
+    height: 210px;
+    overflow: scroll;
+}
+.buttons{
+    border: none;
+    border-radius: 12px;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }

@@ -59,6 +59,15 @@ def register_psicologo(request):
 def home_user(request):
 	return render(request, "home.html")
 
+def write_journal(request):
+	return render(request, "journal.html")
+
+def show_terms(request):
+	return render(request, "terminos.html")
+
+def show_privacy(request):
+	return render(request, "privacidad.html")
+
 # Agregar el cambio de password
 def change_psswd(request):
     if request.method == 'POST':

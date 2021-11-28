@@ -1,4 +1,9 @@
+<!-- Página usada como plantilla donde se define el header y footer,
+  además se importan;
+*  librerías de bootstrap
+* Fuentes de google, íconos y css -->
 {% load static %}
+{% load bootstrap_icons %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +33,8 @@
 </head>
 
 {% block background %}<body class="background">{% endblock %}
+  <!-- Start Header -->
   <div class="container">
-    <!-- Start Title -->
     <header>
       {% block logo-position %}
     <div class="row justify-content-center align-item-center text-center">
@@ -38,32 +43,39 @@
           <a href="{% url 'index' %}">
             {% block logo-color %}
             <h1 class="title_light">Emotions on Page</h1>
-            <!-- <img src="../static/img/lg.png" width="50%" height="50%" class="m-3"> -->
+            <!-- <h3 class="text-warning offset-sm-2">Journal</h3> -->
             {% endblock %}</a>
         </div>
         {% block nav %}<div></div>{% endblock %}
       </div>
     </header>
   </div>
-      <!-- End Title -->
-      {% block content %}{% endblock %}
-      <div class="container">
-      <footer>
-        <div class="row justify-content-start align-items-start m-2 p-3">
-        <div class="col-sm-1 col-md-1">
-          {% block link1 %}<a href="#" class="link">Privacidad</a>{% endblock %}
+  <!-- End Header -->
+
+  {% block content %}{% endblock %} <!--Bloque para personalizar el contenido de otras páginas-->
+      
+  <!-- Start footer -->
+  <div class="container">
+    <footer>
+      <div class="row justify-content-start align-items-start m-2 p-3">
+        <div class="col">
+          {% block trademark %}<p class="font-weight-normal text-white fw-bold">&#0169;Emotions On Page, Inc.</p>{% endblock %}
         </div>
-        <div class="col-sm-1 offset-sm-1 col-lg-1">
-          {% block link2 %}<a href="#" class="link">Términos</a>{% endblock %}
+        <div class="col">
+          {% block link1 %}<a href="{% url 'privacy' %}" class="link">Privacidad</a>{% endblock %}
         </div>
-        <div class="col-sm-3 offset-sm-2">
-          {% block legend %}<p class="col font-weight-normal text">Hecho con &hearts;</p>{% endblock %}
+        <div class="col">
+          {% block link2 %}<a href="{% url 'terms' %}" class="link">Términos</a>{% endblock %}
+        </div>
+        <div class="col">
+          {% block legend %}<p class="font-weight-normal text-white">Hecho con &hearts;</p>{% endblock %}
         </div>
       </div>
-      </footer>
-    </div>
-    {# JS y jQuery Bootstrap #}
-    {% bootstrap_javascript jquery='full' %}
-    </body>
-    
-    </html>
+    </footer>
+  </div>
+<!-- End footer -->
+
+  {# JS y jQuery Bootstrap #}
+  {% bootstrap_javascript jquery='full' %}
+  </body>  
+</html>

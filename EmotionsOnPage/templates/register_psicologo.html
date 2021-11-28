@@ -17,18 +17,21 @@
               <input type="number" class="col-sm-3 form-control m-3" id="number" placeholder="Teléfono">
               <div class="w-100"></div>
             </div>
-            <p class="col font-weight-normal m-1">By clicking "sign up", or continuing with the other options below, you
-              agree to Emotions on Page’s, you agree to <a>Emotions on Page’s Terms</a> of Service and have read the Privacy
-              Policy</p>
+            <p class="col font-weight-normal m-1">Al hacer clic en "Enviar" o continuar con las otras opciones a continuación, aceptas los 
+              <a href="{% url 'terms' %}" class="link-dark">Términos de servicio</a> 
+              de Emotions on Page y has leído la 
+              <a href="{% url 'privacy' %}" class="link-dark">Política de privacidad</a>.
+            </p>
               <p class="col font-weight-normal">¿No eres psicólogo? <a href="{% url 'register_user' %}" class="col font-weight-normal link_4">Regístrarme en Emotions on Page</a></p>
             <p class="col m-1">
-              <button type="button" class="btn btn-outline-dark">Enviar</button>
+              <button type="submit" class="btn btn-outline-dark">Enviar</button>
             </p>
           </form>
         </div>
       </div>
       <!-- End form -->
       {% endblock %}
+      {% block trademark %}<p class="col font-weight-normal text-dark">&#0169;Emotions On Page, Inc.</p>{% endblock %}
       {% block link1 %}<a href="#" class="link_4">Privacidad</a>{% endblock %}
       {% block link2 %}<a href="#" class="link_4">Términos</a>{% endblock %}
-      {% block legend %}<p class="col font-weight-normal text_2">Hecho con &hearts;</p>{% endblock %}
+      {% block legend %}<p class="col font-weight-normal text-dark">Hecho con &hearts;</p>{% endblock %}
