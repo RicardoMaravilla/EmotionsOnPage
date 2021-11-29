@@ -30,7 +30,7 @@ body{
 
 
 .navbar{
-    background-color: salmon;
+    background-color: #AB81CD;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
     min-height: 100px;
     font-size: x-large;
@@ -44,13 +44,37 @@ body{
 
 #hero{
     background-color: black;
-    /*background-image: url('/static/img/hero.png');*/
+    background-image: url('/static/img/hero.jpg');
     background-size: cover;
     padding-top: 90px;
-    min-height: 700px;
+    min-height: 200px;
     color: white;
     
 }
+
+#hero1{
+    background-image: url('/static/img/hero1.jpg');
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 200px;
+    color: white;
+
+}
+#hero2{
+    background-image: url('/static/img/hero2.jpg');
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 200px;
+    color: white;
+}
+#hero3{
+    background-image: url('/static/img/hero3.jpg');
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 200px;
+    color: white;
+}
+
 .content-center{
     max-width: 800px;
     margin: 0 auto 60px auto;
