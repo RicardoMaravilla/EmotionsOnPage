@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from users.views_helpers import look_user
-from users.forms import NewUserForm
+from users.forms import NewUserForm, NewUserFormUser
 from django.contrib.auth.forms import PasswordChangeForm #Pal password change
 
 # Create your views here.
@@ -22,6 +22,19 @@ def register_request(request):
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="register.html", context={"register_form":form})
+
+def register_request_user(request):
+	if request.method == "POST":
+		form = NewUserFormUser(request.POST)
+		print(form)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Registration successful." )
+			return redirect("index")
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	form = NewUserFormUser()
+	return render (request=request, template_name="register_user.html", context={"register_form":form})
 
 def login_request(request):
 	if request.method == "POST":
@@ -68,9 +81,6 @@ def show_terms(request):
 def show_privacy(request):
 	return render(request, "privacidad.html")
 
-def show_test(request):
-	return render(request, "test.html")
-	
 # Agregar el cambio de password
 def change_psswd(request):
     if request.method == 'POST':
