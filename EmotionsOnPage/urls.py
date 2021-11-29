@@ -31,4 +31,5 @@ urlpatterns = [
     path("journal/", users_views.write_journal, name="journal"), 
     path("terms/", users_views.show_terms, name="terms"), 
     path("privacy/", users_views.show_privacy, name="privacy"), 
+    path("test/", users_views.show_test, name="test"), 
 ]

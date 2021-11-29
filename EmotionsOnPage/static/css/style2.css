@@ -5,7 +5,7 @@
     background-color: #E2ADF2;
 }
 .background_3{
-    background-color: #574AE2;
+    background-color: #574AE2; 
 }
 .background_4{
     background-color: #654597;
@@ -93,4 +93,11 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+.option{
+    background-color: #222A68;
+}
+
+.option:hover{
+    background-color: yellow;
 }

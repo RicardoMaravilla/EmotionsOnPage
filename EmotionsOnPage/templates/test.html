@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load bootstrap_icons %}
+{% block title %}<title>Test</title>{% endblock %}
+{% block background %}<body class="background_6">{% endblock %}
+{% block logo-color %}<h1 class="title_dark p-2">Emotions on Page</h1>{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row text-center justify-content-center align-item-center" style="padding: 5px 15px 200px;">
+        <img src="../static/img/mood-ring.gif" alt="mood-ring" class="col-3">
+        <div class="col-12"></div>
+        <p class="col-3 bg-light">Hoy sabrás como te sientes (O al menos te darás una idea) &#128161; Gracias a la magia de nuestro test &#10024;</p>
+        <h3 class="col-12 display-5 m-3">¿Asustado, Potter?</h3>
+        <a href="#faces" class="col">
+            <button type="button" class="btn btn-info m-2" href="#faces">Ni un poco</button>    
+        </a>
+    </div>
+</div>
+<div class="container-fluid background_3">
+    <div class="row text-center justify-content-center align-item-center" style="padding: 30px 15px 50px;" id="faces">
+        <p class="col-3 text-center text-white">Mírate en un espejo sin forzar tu expresión y selecciona la imagen que más se parezca a la tuya</p>
+        <div class="col-11"></div>
+        <img src="../static/img/super-happy.jpg" alt="sad" class="col-2">
+        <img src="../static/img/angry.jpg" alt="sad" class="col-2">
+        <img src="../static/img/happy.jpg" alt="sad" class="col-2">
+        <div class="col-11 m-2"></div>
+        <img src="../static/img/serious.png" alt="sad" class="col-2">
+        <img src="../static/img/sad.jpg" alt="sad" class="col-2">
+        <div class="col-12"></div>
+        <a href="#pain" class="col">
+            <button type="button" class="btn btn-success m-3 text-white">Siguiente</button>     
+        </a>
+    </div>
+</div>
+<div class="container-fluid background">
+    <div class="row text-center justify-content-center align-item-center text-white" style="padding: 100px 15px;" id="pain">
+        <p class="col-3">¿Sientes dolor en alguna parte de tu cuerpo?
+        </p>
+        <div class="col-11"></div>
+        <img src="../static/img/head.png" alt="head" class="col-2">
+        <img src="../static/img/chest.png" alt="chest" class="col-2">
+        <img src="../static/img/back.png" alt="back" class="col-2">
+        <div class="col-11 m-3"></div>
+        <img src="../static/img/stomach.png" alt="stomach" class="col-2">
+        <img src="../static/img/nothing.png" alt="nothing" class="col-2">
+        <div class="col-12 m-3"></div>
+        <a href="#song" class="col">
+            <button type="button" class="btn btn-warning m-2">Siguiente</button>    
+        </a>
+    </div>
+</div>
+<div class="container-fluid background_4">
+    <div class="row text-center justify-content-center align-item-center text-white" style="padding: 100px 15px;" id="song">
+        <p class="col-3">¿Con qué canción te identificas más?</p>
+        <div class="col-12"></div>   
+        <iframe class="col-3 p-2 border border-warning bg-warning" title="serious" 
+        src="https://www.youtube.com/embed/8ELnhjGw4Zs" frameborder="0"></iframe>
+        <iframe class="col-3" title="angry" 
+        src="https://www.youtube.com/embed/YR5ApYxkU-U?start=170" 
+        frameborder="0" ></iframe> 
+        <iframe class="col-3" frameborder="0" title="happy" 
+            src="https://www.youtube.com/embed/e1FN047_LT0">
+        </iframe>    
+        <div class="col-12 m-4"></div>   
+        <iframe class="col-3"frameborder="0" title="super-happy" 
+            src="https://www.youtube.com/embed/myCuDnWqM-s?start=28">
+        </iframe>  
+        <div class="col-1"></div>  
+        <iframe class="col-3" frameborder="0" title="sad" 
+            src="https://www.youtube.com/embed/REQFEDi4RrE">
+        </iframe>    
+        <div class="col-12 m-3"></div>
+        <a href="#" class="col">
+            <button type="button" class="btn btn-success m-2">Siguiente</button>    
+        </a>
+    </div>
+</div>
+<div class="container-fluid background_5">
+    <div class="row text-center justify-content-center align-item-center" style="padding: 200px 15px 250px;">
+        <p class="col-3 bg-light">Hoy sabrás como te sientes (O al menos te darás una idea) &#128161;</p>
+        <h3 class="col-12 display-5 m-3">¿Estás listo?</h3>
+        <button type="col-1 button" class="btn btn-info m-2">Empezar</button>    
+    </div>
+</div>
+<div class="container-fluid background_2">
+    <div class="row text-center justify-content-center align-item-center" style="padding: 200px 15px 250px;">
+        <p class="col-3 bg-light">Hoy sabrás como te sientes (O al menos te darás una idea) &#128161;</p>
+        <h3 class="col-12 display-5 m-3">¿Estás listo?</h3>
+        <button type="col-1 button" class="btn btn-info m-2">Empezar</button>    
+    </div>
+</div>
+<div class="container-fluid background_6">
+    <div class="row text-center justify-content-center align-item-center" style="padding: 200px 15px 250px;">
+        <p class="col-3 bg-light">Hoy sabrás como te sientes (O al menos te darás una idea) &#128161;</p>
+        <h3 class="col-12 display-5 m-3">¿Estás listo?</h3>
+        <button type="col-1 button" class="btn btn-info m-2">Empezar</button>    
+    </div>
+</div>
+
+{% endblock %}
+{% block trademark %}<p class="font-weight-normal text-dark fw-bold">&#0169;Emotions On Page, Inc.</p>{% endblock %}
+{% block link1 %}<a href="{% url 'privacy' %}" class="link-info">Privacidad</a>{% endblock %}
+{% block link2 %}<a href="{% url 'terms' %}" class="link-info">Términos</a>{% endblock %}
+{% block legend %}<p class="col font-weight-normal text-dark">Hecho con &hearts;</p>{% endblock %}

@@ -32,6 +32,6 @@
       <!-- End form -->
       {% endblock %}
       {% block trademark %}<p class="col font-weight-normal text-dark">&#0169;Emotions On Page, Inc.</p>{% endblock %}
-      {% block link1 %}<a href="#" class="link_4">Privacidad</a>{% endblock %}
-      {% block link2 %}<a href="#" class="link_4">Términos</a>{% endblock %}
+      {% block link1 %}<a href="{% url 'privacy' %}" class="link_4">Privacidad</a>{% endblock %}
+      {% block link2 %}<a href="{% url 'terms' %}" class="link_4">Términos</a>{% endblock %}
       {% block legend %}<p class="col font-weight-normal text-dark">Hecho con &hearts;</p>{% endblock %}
