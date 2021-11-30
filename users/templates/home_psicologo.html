@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load bootstrap_icons %}
+{% block title %}<title>Dashboard</title>{% endblock %}
+{% block background %}<body class="background_3">{% endblock %}
+{% block logo-color %}<h1 class="title_light p-2">Emotions on Page</h1>{% endblock %}
+{% block logo-position %}
+    <div class="row justify-content-around align-item-center m-3 p-3">
+        <div class="col">
+      {% endblock %}
+{% block nav %}
+<!-- Start Dropdown user -->
+<div class="col-1 dropdown">
+    {% block user-icon-color %}
+    <a class="nav-link" data-toggle="dropdown" id="user-menu" role="button">
+        {% bs_icon 'person-circle' size='30px' color='#E2ADF2'%}
+    </a>
+    {% endblock %}
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item border-bottom text-secondary text-center fw-bold" href="#">Ajustes</a></li>
+        <li><a class="dropdown-item" href="#">Cuenta</a></li>
+        <li><a class="dropdown-item" href="#">Correo</a></li>
+        <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+        <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>
+        <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="#">Cerrar sesión</a></li>
+    </ul>      
+    </div>
+    <!-- End Dropdown user -->
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center text-center text-white">
+        <p class="col lead">
+           <a href="#">{% bs_icon 'messenger' size='30px' color='#38A8FA'%}</a> 
+           Iniciar un chat
+        </p>
+    </div>
+</div>
+{% endblock %}

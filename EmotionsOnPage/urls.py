@@ -21,10 +21,10 @@ from django.urls import path, include
 urlpatterns = [
     path('', views.index, name='index'),  # Acá
     path('admin/', admin.site.urls),
-    path("register/", users_views.register_request, name="register"),
-    path("register_user/", users_views.register_user, name="register_user"),
+    path("register_user/", users_views.register_request_user, name="register"),
     path("register_psicologo/", users_views.register_psicologo, name="register_psicologo"),
     path("home_user/", users_views.home_user, name="home_user"),
+    path("home_psicologo/", users_views.home_psicologo, name="home_psicologo"),
     path("login/", users_views.login_request, name="login"),
     path("logout/", users_views.logout_request, name= "logout"),
     path("password/", users_views.change_psswd, name="change_psswd"), #para el cambio de password

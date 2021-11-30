@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from users.views_helpers import look_user
-from users.forms import NewUserForm
+from users.forms import NewUserForm, NewUserFormUser
 from django.contrib.auth.forms import PasswordChangeForm #Pal password change
 
 # Create your views here.
@@ -22,6 +22,19 @@ def register_request(request):
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="register.html", context={"register_form":form})
+
+def register_request_user(request):
+	if request.method == "POST":
+		form = NewUserFormUser(request.POST)
+		print(form)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Registration successful." )
+			return redirect("index")
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	form = NewUserFormUser()
+	return render (request=request, template_name="register_user.html", context={"register_form":form})
 
 def login_request(request):
 	if request.method == "POST":
@@ -59,6 +72,9 @@ def register_psicologo(request):
 def home_user(request):
 	return render(request, "home.html")
 
+def home_psicologo(request):
+	return render(request, "home_psicologo.html")
+
 def write_journal(request):
 	return render(request, "journal.html")
 
@@ -71,12 +87,15 @@ def show_privacy(request):
 def show_test(request):
 	return render(request, "test.html")
 
+<<<<<<< HEAD
 def show_emociones(request):
 	return render(request, "emociones.html")
 
 def show_Login(request):
 	return render(request,"Login.html")
 	
+=======
+>>>>>>> main
 # Agregar el cambio de password
 def change_psswd(request):
     if request.method == 'POST':
