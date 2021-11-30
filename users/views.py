@@ -72,6 +72,9 @@ def register_psicologo(request):
 def home_user(request):
 	return render(request, "home.html")
 
+def home_psicologo(request):
+	return render(request, "home_psicologo.html")
+
 def write_journal(request):
 	return render(request, "journal.html")
 

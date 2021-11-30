@@ -69,16 +69,29 @@
             src="https://www.youtube.com/embed/REQFEDi4RrE">
         </iframe>    
         <div class="col-12 m-3"></div>
-        <a href="#" class="col">
+        <a href="#resultado" class="col">
             <button type="button" class="btn btn-success m-2">Siguiente</button>    
         </a>
     </div>
 </div>
 <div class="container-fluid background_6">
-    <div class="row text-center justify-content-center align-item-center" style="padding: 200px 15px 250px;">
-        <p class="col-3 bg-light">Hoy sabrás como te sientes (O al menos te darás una idea) &#128161;</p>
-        <h3 class="col-12 display-5 m-3">¿Estás listo?</h3>
-        <button type="col-1 button" class="btn btn-info m-2">Empezar</button>    
+    <div class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;" id="resultado">
+        <h1 class="display-3"><strong>Resultado</strong></h1>
+        <h3 class="col-12 display-5 m-3">Sientes <strong class="text-danger">ira</strong></h3>
+        <p class="col-12 emojis">&#128545;</p>
+        <p class="col-3 text-dark bg-light">Toma un tiempo para analizar tus respuestas e ir más profundo &#x1f441;</p>
+        <div class="col-11"></div>
+        <h1 class="col-12 display-5 m-2">Te recomendamos</h1> 
+        <p class="col-7 offset-5 text-left">Tomar <a href="#" class="text-danger">esta meditación</a></p>
+        <p class="col-7 offset-5 text-left">Leer <a href="#" class="text-danger">este artículo</a></p>
+        <p class="col-7 offset-5 text-left">Hablar con nuestro psicólogo <a href="#" class="text-danger">especialista en ira</a></p>
+        <p class="col-7 offset-5 text-left">Relajarte con <a href="#" class="text-danger">esta playlist</a></p>
+        {% bs_icon 'spotify' size='30px' color='#55C94B'%}
+        <p class="col-12 link-info m-4"><a href="#">Agregarlo a mis entradas</a></p>
+        <a href="#" class="col-5 link-info">Ver mis respuestas</a>
+        <div class="col-11"></div>
+        <button type="col-1 button" class="btn btn-info m-4">Volver a intentar</button> 
+        <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register' %}" class="link-info">Registrarme</a></p>
     </div>
 </div>
 
