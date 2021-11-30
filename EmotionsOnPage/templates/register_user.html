@@ -1,5 +1,7 @@
 <!-- Vista para registrar usuarios -->
 {% extends "base.html" %}
+{% block background %}<body class="background_2">{% endblock %}
+  {% block logo-color %}<h1 class="title_dark m-3 p-3">Emotions on Page</h1>{% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}  
 <script>
@@ -26,7 +28,7 @@
 </script>
 <!-- Start form -->
 <div class="container">  
-  <div class="form-row justify-content-center text-center p-5 m-3 border border-warning rounded">
+  <div class="form-row justify-content-center text-center p-5 m-3 border border-dark rounded">
     <form class="needs-validation" novalidate method="POST">
       {% csrf_token %}
 		  {{ register_form|crispy }}
@@ -52,18 +54,22 @@
       <div class="w-100"></div>
       </div>
       -->
-      <p class="col font-weight-normal m-1 text-white">Al hacer clic en "Enviar" o continuar con las otras opciones a continuación, aceptas los 
-        <a href="{% url 'terms' %}" class="link-light">Términos de servicio</a> 
+      <p class="col font-weight-normal m-3 text-dark">Al hacer clic en "Enviar" o continuar con las otras opciones a continuación, aceptas los 
+        <a href="{% url 'terms' %}"><ins><strong>Términos de servicio</strong></ins></a> 
           de Emotions on Page y has leído la 
-        <a href="{% url 'privacy' %}" class="link-light">Política de privacidad</a>.
+        <a href="{% url 'privacy' %}"><ins><strong>Política de privacidad</strong></ins></a>.
       </p>
       <br>
-      <p class="col font-weight-normal text-white">¿Eres psicólogo? <a href="{% url 'register_psicologo' %}" class="col font-weight-normal link">Regístrate como psicólogo</a></p>
+      <p class="col font-weight-normal text-dark">¿Eres psicólogo? <a href="{% url 'register_psicologo' %}" class="col font-weight-normal link_4">Regístrate como psicólogo</a></p>
       <p class="col m-1">
-        <button type="submit" class="btn btn-outline-warning">Registrarme</button>
+        <button type="submit" class="btn btn-outline-dark">Registrarme</button>
       </p>
     </form>
   </div>
 </div>
 <!-- End form -->
 {% endblock %}
+{% block trademark %}<p class="col font-weight-normal text-dark">&#0169;Emotions On Page, Inc.</p>{% endblock %}
+{% block link1 %}<a href="{% url 'privacy' %}" class="link_4">Privacidad</a>{% endblock %}
+{% block link2 %}<a href="{% url 'terms' %}" class="link_4">Términos</a>{% endblock %}
+{% block legend %}<p class="col font-weight-normal text-dark">Hecho con &hearts;</p>{% endblock %}

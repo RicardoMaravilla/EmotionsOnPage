@@ -81,6 +81,9 @@ def show_terms(request):
 def show_privacy(request):
 	return render(request, "privacidad.html")
 
+def show_test(request):
+	return render(request, "test.html")
+
 # Agregar el cambio de password
 def change_psswd(request):
     if request.method == 'POST':
