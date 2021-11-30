@@ -9,15 +9,24 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-    <div class="row justify-content-center text-center">
-        <p class="col-6 offset-2 fb-3 text-dark bg-light p-2">Este espacio es solo para ti. Puedes usarlo como un lugar de descarga para tus pensamientos. Descuida, nadie lo sabrá. *guiño* (en serio)</p> 
-        <div class="col-2 m-2"></div>
-        <p class="col-3 fb-3 emojis">&#128525;</p>
+    <div class="row justify-content-center">
+        <p class="col-5 fb-3 text-dark bg-light p-2">Este espacio es solo para ti. Puedes usarlo como un lugar de descarga para tus pensamientos. Descuida, nadie lo sabrá. *guiño* (en serio)</p> 
+    </div>
+    <div class="row justify-content-around text-center">
+        <div class="col-12 m-2"></div>
         <p class="col-3 fb-3 text-dark fw-bold font-monospace justify-content-center">
-            <!-- {% bs_icon 'calendar3' size='25px' color='#654597'%} -->
+            {% bs_icon 'calendar3' size='25px' color='#38A8FA'%}
             <strong>03 de octubre del 2021, miércoles</strong>
-            <input type="date" style="display: none;">
-        </p>     
+            <input type="date">
+        </p> 
+        <!-- <p class="col-3 fb-3 emojis">&#128525;</p> -->
+        <select class="custom-select col-1 fb-3" id="emotion">
+            <option selected>&#128525;</option>
+            <option value="1">&#128513;</option>
+            <option value="2">&#128528;</option>
+            <option value="3">&#128545;</option>
+            <option value="4">&#128546;</option>
+          </select>    
     </div>
     <form action="#" class="row p-4 justify-content-center">
         <textarea class="col-10 border border-dark rounded form-control" id="" rows="20" placeholder="Hoy es..."></textarea>
