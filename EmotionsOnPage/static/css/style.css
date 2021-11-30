@@ -79,6 +79,8 @@ body{
     max-width: 800px;
     margin: 0 auto 60px auto;
     text-align: center;
-    
-
+}
+.big-btn {
+    width: 90px;
+    height: 40px;
 }

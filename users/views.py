@@ -70,6 +70,12 @@ def show_privacy(request):
 
 def show_test(request):
 	return render(request, "test.html")
+
+def show_emociones(request):
+	return render(request, "emociones.html")
+
+def show_Login(request):
+	return render(request,"Login.html")
 	
 # Agregar el cambio de password
 def change_psswd(request):

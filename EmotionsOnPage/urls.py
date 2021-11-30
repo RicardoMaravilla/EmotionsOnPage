@@ -32,4 +32,6 @@ urlpatterns = [
     path("terms/", users_views.show_terms, name="terms"), 
     path("privacy/", users_views.show_privacy, name="privacy"), 
     path("test/", users_views.show_test, name="test"), 
+    path("emociones/",users_views.show_emociones,name="emociones"),
+    path("Login/",users_views.show_Login,name="Login"),
 ]
