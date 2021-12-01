@@ -133,6 +133,12 @@ def show_emociones(request):
 
 def show_Login(request):
 	return render(request,"Login.html")
+
+def show_recomendaciones(request): 
+	return render(request,"recomendaciones.html") 
+
+def show_wikis(request): 
+	return render(request,"wikis.html") 
 	
 # Agregar el cambio de password
 def change_psswd(request):
