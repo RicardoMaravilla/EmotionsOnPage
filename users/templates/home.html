@@ -20,7 +20,7 @@ Contiene las opciones que solo un usuario logueado puede ver:
     {% endblock %}
     <ul class="dropdown-menu">
         <li><a class="dropdown-item border-bottom text-secondary text-center fw-bold" href="#">Ajustes</a></li>
-        <li><a class="dropdown-item" href="#">Cuenta</a></li>
+        <li><a class="dropdown-item" href="#">{{ usuario }}</a></li>
         <li><a class="dropdown-item" href="#">Correo</a></li>
         <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
         <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>

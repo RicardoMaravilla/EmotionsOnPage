@@ -51,7 +51,7 @@ def register_request_user(request):
 			user = form.save()
 			login(request, user)
 			messages.success(request, "Registration successful." )
-			return redirect("index")
+			return redirect("home_user")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUsuarioForm()
 	return render (request=request, template_name="register_user.html", context={"register_form":form})
@@ -63,7 +63,7 @@ def register_request_psicologo(request):
 			user = form.save()
 			login(request, user)
 			messages.success(request, "Registration successful." )
-			return redirect("index")
+			return redirect("home_user")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewPsicologoForm()
 	return render (request=request, template_name="register_psicologo.html", context={"register_form":form})
@@ -76,19 +76,23 @@ def login_request(request):
 			password = form.cleaned_data.get('password')
 			user = psicologos_user.objects.filter(email=email, password=password)
 			if user:
-				response = HttpResponse("Setting Cookie")
-				response.set_cookie('usuario', email)
-				response.set_cookie('tipo_usuario', 'psicologo')
+				#response = HttpResponse("Setting Cookie")
+				#response.set_cookie('usuario', email)
+				#response.set_cookie('tipo_usuario', 'psicologo')
+				request.session['usuario'] = email
+				request.session['tipo_usuario'] = 'psicologo'
 				messages.info(request, f"You are now logged in as {email}.")
-				return redirect("index")
+				return redirect("home_psicologo")
 			else:
 				user = usuarios_user.objects.filter(email=email, password=password)
 			if user:
-				response = HttpResponse("Setting Cookie")
-				response.set_cookie('usuario', email)
-				response.set_cookie('tipo_usuario', 'usuario')
+				#response = HttpResponse("Setting Cookie")
+				#response.set_cookie('usuario', email)
+				#response.set_cookie('tipo_usuario', 'usuario')
+				request.session['usuario'] = email
+				request.session['tipo_usuario'] = 'usuario'
 				messages.info(request, f"You are now logged in as {email}.")
-				return redirect("index")
+				return redirect("home_user")
 			else:
 				messages.error(request,"Invalid username or password.")
 	form = LoginForm()
@@ -96,6 +100,9 @@ def login_request(request):
 
 
 def logout_request(request):
+	response = HttpResponse("Setting Cookie")
+	response.delete_cookie('usuario')
+	response.delete_cookie('tipo_usuario')
 	logout(request)
 	messages.info(request, "You have successfully logged out.")
 	return redirect("main:index")
@@ -110,14 +117,43 @@ def register_user(request):
 def register_psicologo(request):
 	return render(request, "register_psicologo.html")
 
+def home(request):
+	tipo_usuario = request.session.get('tipo_usuario')
+	usuario = request.session.get('usuario')
+	context = {
+		'tipo_usuario': tipo_usuario,
+		'usuario': usuario,
+	}
+	if(tipo_usuario == 'psicologo'):
+		return render(request, "home_psicologo.html", context=context)
+	return render(request, "home_user.html", context=context)
+
 def home_user(request):
-	return render(request, "home.html")
+	tipo_usuario = request.session.get('tipo_usuario')
+	usuario = request.session.get('usuario')
+	context = {
+		'tipo_usuario': tipo_usuario,
+		'usuario': usuario,
+	}
+	return render(request, "home.html", context=context)
 
 def home_psicologo(request):
+	tipo_usuario = request.session.get('tipo_usuario')
+	usuario = request.session.get('usuario')
+	context = {
+		'tipo_usuario': tipo_usuario,
+		'usuario': usuario,
+	}
 	return render(request, "home_psicologo.html")
 
 def write_journal(request):
-	return render(request, "journal.html")
+	tipo_usuario = request.session.get('tipo_usuario')
+	usuario = request.session.get('usuario')
+	context = {
+		'tipo_usuario': tipo_usuario,
+		'usuario': usuario,
+	}
+	return render(request, "journal.html", context=context)
 
 def show_terms(request):
 	return render(request, "terminos.html")
