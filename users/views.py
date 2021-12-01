@@ -1,16 +1,18 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, response
 from django.core.validators import EmailValidator
 from django.contrib.auth.models import User
+from users.models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from users.views_helpers import look_user
-from users.forms import NewUserForm, NewUserFormUser
+from users.forms import NewPsicologoForm, NewUsuarioForm, LoginForm
 from django.contrib.auth.forms import PasswordChangeForm #Pal password change
 
 # Create your views here.
 
+"""
 def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
@@ -22,19 +24,6 @@ def register_request(request):
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="register.html", context={"register_form":form})
-
-def register_request_user(request):
-	if request.method == "POST":
-		form = NewUserFormUser(request.POST)
-		print(form)
-		if form.is_valid():
-			user = form.save()
-			login(request, user)
-			messages.success(request, "Registration successful." )
-			return redirect("index")
-		messages.error(request, "Unsuccessful registration. Invalid information.")
-	form = NewUserFormUser()
-	return render (request=request, template_name="register_user.html", context={"register_form":form})
 
 def login_request(request):
 	if request.method == "POST":
@@ -53,6 +42,58 @@ def login_request(request):
 			messages.error(request,"Invalid username or password.")
 	form = AuthenticationForm()
 	return render(request=request, template_name="login.html", context={"login_form":form})
+"""
+
+def register_request_user(request):
+	if request.method == "POST":
+		form = NewUsuarioForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Registration successful." )
+			return redirect("index")
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	form = NewUsuarioForm()
+	return render (request=request, template_name="register_user.html", context={"register_form":form})
+
+def register_request_psicologo(request):
+	if request.method == "POST":
+		form = NewPsicologoForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Registration successful." )
+			return redirect("index")
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	form = NewPsicologoForm()
+	return render (request=request, template_name="register_psicologo.html", context={"register_form":form})
+
+def login_request(request):
+	if request.method == "POST":
+		form = LoginForm(request.POST)
+		if form.is_valid():
+			email = form.cleaned_data.get('email')
+			password = form.cleaned_data.get('password')
+			user = psicologos_user.objects.filter(email=email, password=password)
+			if user:
+				response = HttpResponse("Setting Cookie")
+				response.set_cookie('usuario', email)
+				response.set_cookie('tipo_usuario', 'psicologo')
+				messages.info(request, f"You are now logged in as {email}.")
+				return redirect("index")
+			else:
+				user = usuarios_user.objects.filter(email=email, password=password)
+			if user:
+				response = HttpResponse("Setting Cookie")
+				response.set_cookie('usuario', email)
+				response.set_cookie('tipo_usuario', 'usuario')
+				messages.info(request, f"You are now logged in as {email}.")
+				return redirect("index")
+			else:
+				messages.error(request,"Invalid username or password.")
+	form = LoginForm()
+	return render(request=request, template_name="login.html", context={"login_form":form})
+
 
 def logout_request(request):
 	logout(request)
@@ -92,16 +133,7 @@ def show_emociones(request):
 
 def show_Login(request):
 	return render(request,"Login.html")
-<<<<<<< HEAD
 	
-=======
-
-def show_recomendaciones(request):
-	return render(request,"recomendaciones.html")
-
-def show_wikis(request):
-	return render(request,"wikis.html")
->>>>>>> main
 # Agregar el cambio de password
 def change_psswd(request):
     if request.method == 'POST':

@@ -1,10 +1,12 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.forms.models import ModelForm
+from users.models import entrada_user, psicologos_user, usuarios_user
 
 
 # Create your forms here.
-
+"""
 class NewUserForm(UserCreationForm):
 	email = forms.EmailField(required=True)
 
@@ -49,3 +51,34 @@ class NewUserFormUser(UserCreationForm):
 			if self.cleaned_data['password1'] != self.cleaned_data['password2']:
 				raise forms.ValidationError("The two password fields didn't match.")
 		return self.cleaned_data
+"""
+class NewPsicologoForm(ModelForm):
+	class Meta:
+		model = psicologos_user
+		fields = ('nombre', 'apellido', 'email', 'telefono', 'titulo', 'consultorio', 'especialidad', 'password')
+	
+	nombre = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Nombre'}))
+	apellido = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Apellido'}))
+	email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'Email'}))
+	telefono = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Telefono', 'size': '10'}))
+	titulo = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Titulo', 'size': '50'},))
+	consultorio = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Consultorio', 'size': '50'}))
+	especialidad = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Especialidad' ,'size': '100'}))
+	password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+
+class NewUsuarioForm(ModelForm):
+	class Meta:
+		model = usuarios_user
+		fields = ('nombre', 'apellido', 'email', 'telefono', 'problema', 'direccion', 'password')
+
+	nombre = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Nombre'}))
+	apellido = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Apellido'}))
+	email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'Email'}))
+	telefono = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Telefono', 'size': '10'}))
+	problema = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Titulo', 'size': '50'},))
+	direccion = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Consultorio', 'size': '50'}))
+	password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+	
+class LoginForm(forms.Form):
+	email = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Email'}))
+	password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
