@@ -7,18 +7,21 @@
 <!--Login -->
 <div class="container">
   <div class="form-row justify-content-center text-center p-5 m-3 border border-warning rounded">
-    <from method="post">
-      
+    <form method="POST">
+      {% csrf_token %}
+      {{ login_form|crispy }}
+      <!-- 
       <div class="row">
         <div class="form-group">
           <label for="username">Nombre de Usuario:</label>
           <input class="form-control" type="text" name="username">
         </div>
       </div>
+      -->
       <div class="row">
         <div class="form-group">
-          <label for="username">Contraseña:</label>
-          <input class="form-control" type="password" name="password">
+          <!--<label for="username">Contraseña:</label>-->
+          <!--<input class="form-control" type="password" name="password">-->
           <br>
           <br>
           <button class="btn btn-primary" type="submit">Login</button>
@@ -26,7 +29,7 @@
       </div>
       <div class="row">
           <div class="form-group">
-            <p class="text-center">¿No tienes cuenta? <a href="/register">Crear Cuenta</a>.</p>
+            <p class="text-center">¿No tienes cuenta? <a href="/register_user">Crear Cuenta</a>.</p>
             <p class="text-center"><a href="/password">¿Olvidaste tu contraseña?</a></p>
           </div>
       </div>
