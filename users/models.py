@@ -11,22 +11,31 @@ class Users_list(models.Model): #Nombre de clase = Nombre de la tabla
     password = models.CharField(max_length=10) #Despues de guardar ejecutar  python manage.py migrate y despues python manage.py makemigrations
 
 """
-
-class entrada(models.Model): #Nombre de clase = Nombre de la tabla
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
-    emoji = models.CharField(max_length=50)
-    fecha = models.DateTimeField()
-    contenido = models.CharField(max_length=100)
-
-class psicologos(models.Model): #Nombre de clase = Nombre de la tabla
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
+class psicologos_user(models.Model): #Nombre de clase = Nombre de la tabla
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    email = models.CharField(max_length=30)
+    telefono = models.CharField(max_length=10)
     titulo = models.CharField(max_length=50)
     consultorio = models.CharField(max_length=50)
     especialidad = models.CharField(max_length=100)
+    password = models.CharField(max_length=20)
+    last_login = models.DateTimeField(auto_now=True)
 
-class usuarios(models.Model): #Nombre de clase = Nombre de la tabla
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
+class usuarios_user(models.Model): #Nombre de clase = Nombre de la tabla
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=60)
+    email = models.CharField(max_length=30)
+    telefono = models.CharField(max_length=10)
     problema = models.CharField(max_length=50)
     direccion = models.CharField(max_length=50)
-    telefono = models.CharField(max_length=10)
-    psicologo = models.ForeignKey(psicologos, on_delete=models.CASCADE)
+    password = models.CharField(max_length=20)
+    psicologo = models.ForeignKey(psicologos_user, on_delete=models.CASCADE, null=True)
+    last_login = models.DateTimeField(auto_now=True)
+
+
+class entrada_user(models.Model): #Nombre de clase = Nombre de la tabla
+    username = models.ForeignKey(usuarios_user, on_delete=models.CASCADE ,null=True)
+    emoji = models.CharField(max_length=50, null=True)
+    fecha = models.DateTimeField(null=True)
+    contenido = models.CharField(max_length=100, null=True)
