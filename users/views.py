@@ -49,7 +49,7 @@ def register_request_user(request):
 		form = NewUsuarioForm(request.POST)
 		if form.is_valid():
 			user = form.save()
-			login(request, user)
+			login_request(request)
 			messages.success(request, "Registration successful." )
 			return redirect("home_user")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
@@ -61,9 +61,9 @@ def register_request_psicologo(request):
 		form = NewPsicologoForm(request.POST)
 		if form.is_valid():
 			user = form.save()
-			login(request, user)
+			login_request(request)
 			messages.success(request, "Registration successful." )
-			return redirect("home_user")
+			return redirect("home_psicologo")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewPsicologoForm()
 	return render (request=request, template_name="register_psicologo.html", context={"register_form":form})
@@ -111,11 +111,6 @@ def logout_request(request):
 # Modificar para nombres en register
 
 #Funciones de prueba
-def register_user(request):
-	return render(request, "register_user.html")
-
-def register_psicologo(request):
-	return render(request, "register_psicologo.html")
 
 def home(request):
 	tipo_usuario = request.session.get('tipo_usuario')
