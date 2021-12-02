@@ -98,14 +98,13 @@ def login_request(request):
 	form = LoginForm()
 	return render(request=request, template_name="login.html", context={"login_form":form})
 
-
 def logout_request(request):
 	response = HttpResponse("Setting Cookie")
 	response.delete_cookie('usuario')
 	response.delete_cookie('tipo_usuario')
 	logout(request)
 	messages.info(request, "You have successfully logged out.")
-	return redirect("main:index")
+	return redirect("index")
 
 
 # Modificar para nombres en register
@@ -148,6 +147,14 @@ def write_journal(request):
 		'tipo_usuario': tipo_usuario,
 		'usuario': usuario,
 	}
+
+	if request.method == "POST":
+		date = request.POST.get("j_date")
+		emotion = request.POST.get("j_emotion")
+		entrada = request.POST.get("j_entrada")
+		user = usuarios_user.objects.get(email=usuario)
+		print(user.nombre)
+
 	return render(request, "journal.html", context=context)
 
 def show_terms(request):
