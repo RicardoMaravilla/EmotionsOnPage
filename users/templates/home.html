@@ -35,9 +35,11 @@ Contiene las opciones que solo un usuario logueado puede ver:
         <h3 class="col-5 fs-1 text-white">
             Mis entradas
         </h3>
+        {% if usuario %}
         <a href="{% url 'journal' %}"class="col">
             {% bs_icon 'plus-square-fill' size='33px' color='#E2ADF2'%}
         </a>
+        {% endif%}
    </div>
    <!-- Start table: Muestra registros desde la bdd -->
 

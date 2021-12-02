@@ -149,11 +149,13 @@ def write_journal(request):
 	}
 
 	if request.method == "POST":
-		date = request.POST.get("j_date")
-		emotion = request.POST.get("j_emotion")
-		entrada = request.POST.get("j_entrada")
+		fecha = request.POST.get("j_date")
+		emoji = request.POST.get("j_emotion")
+		contenido = request.POST.get("j_entrada")
 		user = usuarios_user.objects.get(email=usuario)
-		print(user.nombre)
+		
+		new_entrada = entrada_user(fecha=fecha, emoji=emoji, contenido=contenido, username=user)
+		new_entrada.save()
 
 	return render(request, "journal.html", context=context)
 
