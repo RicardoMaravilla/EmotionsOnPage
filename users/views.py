@@ -199,6 +199,8 @@ def change_psswd(request):
         form = PasswordChangeForm(request.user)
     return render(request=request, template_name="change_psswd.html", context={"change_psswd":form})
 
+def change_mail(request):
+	return render(request,"change_mail.html")
 
 # Login con email en vez de username
 

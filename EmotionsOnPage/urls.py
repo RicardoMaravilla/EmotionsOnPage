@@ -29,6 +29,7 @@ urlpatterns = [
     path("login/", users_views.login_request, name="login"),
     path("logout/", users_views.logout_request, name= "logout"),
     path("password/", users_views.change_psswd, name="change_psswd"), #para el cambio de password
+    path("mail/",users_views.change_mail,name="change_mail"), #para el cambio de email
     path("journal/", users_views.write_journal, name="journal"), 
     path("terms/", users_views.show_terms, name="terms"), 
     path("privacy/", users_views.show_privacy, name="privacy"), 

@@ -1,0 +1,59 @@
+{% extends "home.html" %}
+{% block title %}<title>Change E-mail</title>{% endblock %}
+{% load bootstrap_icons %}
+{% block background %}<body class="background_6">{% endblock %}
+{% block logo-color %}
+    <h1 class="title_dark p-2">Emotions on Page</h1>  
+{% endblock %}
+{% block content %} 
+<div class="container">
+
+
+    <h2 style="font-size: 25px;font-weight: 600;color:white">Change E-mail</h2>
+    <div class="body_container box box--big">
+		<!-- form starts here -->
+		<form id="change-mail-form" method="post" action="#">
+            {% csrf_token %}
+			<div class="agile-field-txt">
+				<label>
+					<i class="fa fa-user" aria-hidden="true"></i> old mail </label>
+				<input id="old_mail" name="old_mail" placeholder="Enter your old e-mail" required=""
+                                   type="text" class="form-control">
+			</div>
+			<div class="agile-field-txt">
+				<label>
+					<i class="fa fa-envelope" aria-hidden="true"></i> New mail </label>
+					<input name="new_mail1" type="mail" class="form-control"
+					   placeholder="Enter your new mail " required="" id="new_mail1">
+			</div>
+			<div class="agile-field-txt">
+				<label>
+					<i class="fa fa-envelope" aria-hidden="true"></i> New E-mail Confirmation </label>
+					<input name="new_mail2" type="mail" class="form-control"
+					   placeholder="Enter your new mail " required="" id="new_mail2">
+			</div>
+				{% if form.errors %}
+                    {% for field in form %}
+						{{field.name}}
+                        {% for error in field.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+			<div class="w3ls-bot row justify-content-center text-center m-3">
+				<div class="form-end">
+					<input type="submit" value="Submit" class="btn btn-info">
+				</div>
+				<div class="clearfix"></div>
+                <br/>
+
+			</div>
+
+		</form>
+	</div>
+</div>
+{% endblock %}
+{% block trademark %}<p class="font-weight-normal text-dark fw-bold">&#0169;Emotions On Page, Inc.</p>{% endblock %}
+{% block link1 %}<a href="{% url 'privacy' %}" class="link-info">Privacidad</a>{% endblock %}
+{% block link2 %}<a href="{% url 'terms' %}" class="link-info">Términos</a>{% endblock %}
+{% block legend %}<p class="col font-weight-normal text-dark">Hecho con &hearts;</p>{% endblock %}
