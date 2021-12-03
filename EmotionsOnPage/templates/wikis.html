@@ -4,80 +4,209 @@
 {% load bootstrap_icons %}
 {% block title %}<title>Recomendaciones</title>{% endblock %}
 {% block content %}
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    
+</head>
 
-<div class="container">
+<div class="contenedor">
     <div class="elemento">
-        <h3><img src="../static/img/blog1.jpg" alt="" width="220px" height="300px" class="izquierda">
-            <a href="https://psicologiaymente.com/">
-            Psicologia y Mente 
-            </a>
-        </h3>
-        <h3>Es uno de los blogs de psicología que ofrece una mayor variedad en la temática de sus contenidos 
-            y también uno de los más visitados en español. En menos de un año desde que tres estudiantes de 
-            psicología de Barcelona (España) lo crearon, ya es líder en la divulgación de artículos sobre psicología 
-            con más de 20 millones de visitantes mensuales y su página de Facebook cuenta ya con más de 1.200.000 seguidores.</h3>
+        <h2 style="color: blueviolet;"><img src="../static/img/blog.jpg" alt="" width="220px" height="300px" class="izquierda">
+            
+            ¿Que es una Emocion?
+            
+        </h2>
+        <h4>
+            Una emoción es un sentimiento que surge cuando la persona reacciona de manera subjetiva 
+            al ambiente, generando así un estado afectivo que va acompañado de cambios físicos puesto que 
+            las emociones pueden causar reacciones fisiológicas.
+        </h4>
     </div>
     <div class="elemento">
-        <h3><img src="../static/img/blog2.jpg" alt="" width="220px" height="300px" class="izquierda">
-            <a href="https://serenapsicologia.com/blog/">
+        <h2 style="color: blueviolet;"><img src="../static/img/blog6.jpg" alt="" width="220px" height="300px" class="izquierda">
+            
+            6 Pequeños Hábitos Para Mejorar tu Bienestar Mental
+            
+        </h2>
+        <h4>
+            1 Aliviana el peso de las Situaciones Difíciles
+        </h4>
+        <h4>2 Practica la Gratitud</h4>
+        <h4>3 Conéctate con la Naturaleza</h4>
+        <h4>4 Meditao</h4>
+        <h4>5 Escribe tus Pensamientos y Sentimientos</h4>
+        <h4>6 Cuida tu Cuerpo</h4>
+        
+        
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/blog8.jpg" alt="" width="210px" height="220px" class="izquierda">
+            
+            5 razones por las que no debes temerle a la terapia
+            
+        </h2>
+        <h4>
+            1. Asegurate de querer ir a terapia por ti mismo y no por nadie más.
+        </h4>
+        <h4>2. Encuentra al terapeuta adecuado que te funcione </h4>
+        <h4>3. Busca la recomendacion de alguien de confianza si no sabes por donde empezar.</h4>
+        <h4>4. La terapia puede ser asequible.</h4>
+        <h4>5. No descartes la terapia de forma permanente, ya que tu vida siempre esta cambiando. </h4>
+        
+        
+    </div>  
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/blog7.jpg" alt="" width="220px" height="300px" class="izquierda">
+            
+            8 Hábitos que NO Sabes que Son Por ANSIEDAD 
+            
+        </h2>
+        <h4>1. Retorcerse el cabello</h4>
+        <h4>2. Pellizcarse la piel</h4>
+        <h4>3. Soñar despierto</h4>
+        <h4>4. Estar inquieto y jugar con algo</h4>
+        <h4>5. Dormir demasiado o muy poco</h4>
+        <h4>6. Pasar demasiado tiempo en las redes sociales</h4>
+        <h4>7. Hablar demasiado o muy poco, o discutir</h4>
+        <h4>8. Ser olvidadizo y no poder concentrarte</h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/blog9.jpg" alt="" width="220px" height="300px" class="izquierda">
+            
+            10 Cosas que la Depresión nos hace Hacer
+            
+        </h2>
+        <h4>1. Aislarte</h4>
+        <h4>2. Ser desorganizado </h4>
+        <h4>3. Mala Higiene</h4>
+        <h4>4. Problemas para dormir</h4>
+        <h4>5. Dramatizar cada situacion</h4>
+        <h4>6. Terribles habitos alimenticios</h4>
+        <h4>7. Falta de Motivación</h4>
+        <h4>8. Evadir tus problemas</h4>
+        <h4>9. Sentirse culpade y odio por uno mismo</h4>
+        <h4>10. Vivir con miedo</h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/blog10.jpg" alt="" width="220px" height="300px" class="izquierda">
+            
+            6 Consecuencias del Trauma no Superado
+            
+        </h2>
+        <h4>1. Te culpas a ti mismo </h4>
+        <h4>2. Reprimes tus sentimientos</h4>
+        <h4>3. Hay una interrupción en tu rutina diaria</h4>
+        <h4>4. Saboteas tus relaciones</h4>
+        <h4>5. Siempre asumes lo peor</h4>
+        <h4>6. Sentirse ansioso sin motivo
+        </h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/blog11.jpg" alt="" width="220px" height="300px" class="izquierda">
+            
+            8 Señales de Ansiedad Social 
+            
+        </h2>
+        <h4>1. Siempre te sientes cohibido </h4>
+        <h4>2. Tu ansiedad se siente fuera de control</h4>
+        <h4>3. Afecta a tu Rendimiento</h4>
+        <h4>4. Afecta a tus Relaciones</h4>
+        <h4>5. No desaparece entre gente de confianza</h4>
+        <h4>6. Sobreanalizas Todo</h4>
+        <h4>7. Evita situaciones sociales</h4>
+        <h4>8. Tienes sintomas fisicos</h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/blog12.jpg" alt="" width="220px" height="300px" class="izquierda">
+            
+            7 Señales de que Podrías Ser Emocionalmente Abusivo
+            
+        </h2>
+        <h4>1. Insultas a la gente de broma</h4>
+        <h4>2. Invalidas los sentimientos de los demas</h4>
+        <h4>3. Te gusta avergonzar a los demas</h4>
+        <h4>4. Te gusta provocar</h4>
+        <h4>5. Le dices a la gente que su version de la realidad es incorrecta</h4>
+        <h4>6. Usas tus emociones para que la gente haga lo que tu quieres</h4>
+        <h4>7. Usas el silencio como arma</h4>
+    </div>
+    <div class="elemento">
+        <h2><img src="../static/img/blog1.jpg" alt="" width="220px" height="300px" class="izquierda">
+            <a href="https://psicologiaymente.com/" style="color: blueviolet;">
+            Psicologia y Mente 
+            </a>
+        </h2>
+        <h4>Es uno de los blogs de psicología que ofrece una mayor variedad en la temática de sus contenidos 
+            y también uno de los más visitados en español. En menos de un año desde que tres estudiantes de 
+            psicología de Barcelona (España) lo crearon, ya es líder en la divulgación de artículos sobre psicología 
+            con más de 20 millones de visitantes mensuales y su página de Facebook cuenta ya con más de 1.200.000 seguidores.</h4>
+    </div>
+    <div class="elemento">
+        <h2><img src="../static/img/blog2.jpg" alt="" width="220px" height="300px" class="izquierda">
+            <a href="https://serenapsicologia.com/blog/" style="color: blueviolet;">
                 Serena Psicología
             </a>
-        </h3>
-        <h3>El centro de psicoterapia especializado en mujeres Serena Psicología cuenta con un interesante 
+        </h2>
+        <h4>El centro de psicoterapia especializado en mujeres Serena Psicología cuenta con un interesante 
             blog que trata temas de interés general.
             A través de sus artículos, que normalmente están planteados centrándose en consejos prácticos 
             y en la resolución de dudas frecuentes en la vida cotidiana, podrás aprender sobre aspectos de 
             la mente humana como la gestión de la ira, el sentimiento de culpa en la maternidad, las creencias 
             machistas y cómo detectarlas, la autoestima en mujeres, las emociones asociadas a las rupturas de pareja, y más.
-        </h3>
+        </h4>
     </div>
     <div class="elemento">
-        <h3><img src="../static/img/blog3.jpg" alt="" width="220px" height="300px" class="izquierda">
-            <a href="https://habilidadsocial.com/blog/">
+        <h2><img src="../static/img/blog3.jpg" alt="" width="200px" height="300px" class="izquierda">
+            <a href="https://habilidadsocial.com/blog/" style="color: blueviolet;">
                 Habilidad Social
             </a>
-        </h3>
-        <h3>Es frecuente que en los blogs de psicología se hable sobre investigaciones y conceptos teóricos 
+        </h2>
+        <h4>Es frecuente que en los blogs de psicología se hable sobre investigaciones y conceptos teóricos 
             que hacen referencia al funcionamiento del cerebro humano, como si esta fuera una máquina que trabaja 
             de manera privada y de manera individual. Sin embargo, es menos frecuente encontrar webs que se centren 
             especialmente en la esfera práctica de la gestión de las habilidades sociales.
-        </h3>
+        </h4>
     </div>
     <div class="elemento">
-        <h3><img src="../static/img/blog4.jpg" alt="" width="220px" height="300px" class="izquierda">
-            <a href="https://www.menteamente.com/blog-salud-mental">
+        <h2><img src="../static/img/blog4.jpg" alt="" width="220px" height="320px" class="izquierda">
+            <a href="https://www.menteamente.com/blog-salud-mental" style="color: blueviolet;">
                 Mente A Mente
             </a>
-        </h3>
-        <h3>La ansiedad y el miedo son experiencias normales que todos experimentamos cada cierto tiempo. 
+        </h2>
+        <h4>La ansiedad y el miedo son experiencias normales que todos experimentamos cada cierto tiempo. 
             El miedo surge ante una amenaza externa identificable (por ejemplo, ante un atraco) y es una de 
             las seis emociones básicas. El miedo se considera fundamental para la supervivencia porque nos 
             prepara para la reacción de lucha-huida ante situaciones de riesgo inminente. Por otra parte, 
             la ansiedad es un estado emocional no placentero que se acompaña de nerviosismo y una sensación de desasosiego.
-        </h3>
+        </h4>
     </div>
     <div class="elemento">
-        <h3><img src="../static/img/blog5.jpg" alt="" width="220px" height="300px" class="izquierda">
-            <a href="https://www.som360.org/es/blog">
+        <h2><img src="../static/img/blog5.jpg" alt="" width="200px" height="300px" class="izquierda">
+            <a href="https://www.som360.org/es/blog" style="color: blueviolet;">
                 Salud Mental 360
             </a>
-        </h3>
-        <h3>SOM Salud Mental 360 es una iniciativa impulsada por centros de la Orden Hospitalaria San Juan de Dios.
+        </h2>
+        <h4>SOM Salud Mental 360 es una iniciativa impulsada por centros de la Orden Hospitalaria San Juan de Dios.
             Participan en este proyecto diferentes centros que atienden a personas con problemas de salud mental: 
             el Parc Sanitari Sant Joan de Déu (Sant Boi del Llobregat, Barcelona), el Hospital Sant Joan de Déu Barcelona 
             (Esplugues de Llobregat, Barcelona) y Sant Joan de Déu Terres de Lleida (Almacelles-Lleida), así como Sant Joan de Déu Serveis 
             Socials-Barcelona además del ámbito solidario representado por Solidaridad San Juan de Dios.
-        </h3>
+        </h4>
     </div>
+    
 
 
 
 
     
 </div>
-
-
-
-
+<script>
+    var elem = document.querySelector('.contenedor');
+    var msnry = new Masonry( elem, {
+    // options
+    itemSelector: '.elemento',
+    });
+</script>
 
 {% endblock %}
