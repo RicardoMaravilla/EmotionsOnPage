@@ -34,7 +34,6 @@ urlpatterns = [
     path("privacy/", users_views.show_privacy, name="privacy"), 
     path("test/", users_views.show_test, name="test"), 
     path("emociones/",users_views.show_emociones,name="emociones"),
-    path("Login/",users_views.show_Login,name="Login"),
     path("recomendaciones/",users_views.show_recomendaciones,name="recomendaciones"),
     path("wikis/",users_views.show_wikis,name="wikis"),
 ]

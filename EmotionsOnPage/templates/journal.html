@@ -16,13 +16,13 @@
     {% csrf_token %}
     <div class="row justify-content-around text-center">
         <div class="col-12 m-2"></div>
-        <p class="col-7 fb-3 text-dark fw-bold font-monospace justify-content-center">
+        <p class="col-3 fb-3 text-dark fw-bold font-monospace justify-content-center">
             {% bs_icon 'calendar3' size='25px' color='#38A8FA'%}
             <strong>03 de octubre del 2021, miércoles</strong>
             <input type="date" name="j_date">
         </p> 
         <!-- <p class="col-3 fb-3 emojis">&#128525;</p> -->
-        <select class="custom-select col-2 fb-3" id="emotion">
+        <select class="custom-select col-1 fb-3" id="emotion" name="j_emotion">
             <option selected>&#128525;</option>
             <option>&#128513;</option>
             <option>&#128528;</option>
