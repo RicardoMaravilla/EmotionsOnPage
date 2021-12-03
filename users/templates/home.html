@@ -21,11 +21,11 @@ Contiene las opciones que solo un usuario logueado puede ver:
     {% endblock %}
     <ul class="dropdown-menu">
         <li><a class="dropdown-item border-bottom text-secondary text-center fw-bold" href="#">Ajustes</a></li>
-        <li><a class="dropdown-item" href="#">{{ usuario }}</a></li>
+        <li><a class="dropdown-item" href="{% url 'login' %}">{% if usuario %} {{ usuario }} {% else %} Iniciar Sesion {% endif%}</a></li>
         <li><a class="dropdown-item" href="#">Correo</a></li>
         <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
         <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>
-        <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="#">Cerrar sesión</a></li>
+        <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="{% url 'logout' %}">Cerrar sesión</a></li>
     </ul>      
     </div>
     <!-- End Dropdown user -->
@@ -36,9 +36,11 @@ Contiene las opciones que solo un usuario logueado puede ver:
         <h3 class="col-5 fs-1 text-white">
             Mis entradas
         </h3>
+        {% if usuario %}
         <a href="{% url 'journal' %}"class="col">
             {% bs_icon 'plus-square-fill' size='33px' color='#E2ADF2'%}
         </a>
+        {% endif%}
    </div>
    <!-- Start table: Muestra registros desde la bdd -->
 
@@ -52,39 +54,12 @@ Contiene las opciones que solo un usuario logueado puede ver:
                         <th>Content</th>
                     </tr>
                 </thead> -->
-                <tbody>
-                    <tr>
-                        <td>&#128546;</td>
-                        <td>20-08-2021</td>
-                    </tr>
-                    <tr>
-                        <td>&#128525;</td>
-                        <td>20-08-2021</td>
-                    </tr>   
-                    <tr>
-                        <td>&#128513;</td>
-                        <td>20-08-2021</td>
-                    </tr>   
-                    <tr>
-                        <td>&#128513;</td>
-                        <td>20-08-2021</td>
-                    </tr>   
-                    <tr>
-                        <td>&#128513;</td>
-                        <td>20-08-2021</td>
-                    </tr>   
-                    <tr>
-                        <td>&#128513;</td>
-                        <td>20-08-2021</td>
-                    </tr>   
-                    <tr>
-                        <td>&#128513;</td>
-                        <td>20-08-2021</td>
-                    </tr>   
-                    <tr>
-                        <td>&#128513;</td>
-                        <td>20-08-2021</td>
-                    </tr>   
+                    {% for e in entradas %}
+                        <tr class="{% cycle 'row1' 'row2' %}">
+                            <td>{{ e.emoji }}</td>
+                            <td>{{ e.fecha }}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

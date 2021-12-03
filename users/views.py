@@ -49,7 +49,7 @@ def register_request_user(request):
 		form = NewUsuarioForm(request.POST)
 		if form.is_valid():
 			user = form.save()
-			login(request, user)
+			login_request(request)
 			messages.success(request, "Registration successful." )
 			return redirect("home_user")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
@@ -61,9 +61,9 @@ def register_request_psicologo(request):
 		form = NewPsicologoForm(request.POST)
 		if form.is_valid():
 			user = form.save()
-			login(request, user)
+			login_request(request)
 			messages.success(request, "Registration successful." )
-			return redirect("home_user")
+			return redirect("home_psicologo")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewPsicologoForm()
 	return render (request=request, template_name="register_psicologo.html", context={"register_form":form})
@@ -98,24 +98,18 @@ def login_request(request):
 	form = LoginForm()
 	return render(request=request, template_name="login.html", context={"login_form":form})
 
-
 def logout_request(request):
 	response = HttpResponse("Setting Cookie")
 	response.delete_cookie('usuario')
 	response.delete_cookie('tipo_usuario')
 	logout(request)
 	messages.info(request, "You have successfully logged out.")
-	return redirect("main:index")
+	return redirect("index")
 
 
 # Modificar para nombres en register
 
 #Funciones de prueba
-def register_user(request):
-	return render(request, "register_user.html")
-
-def register_psicologo(request):
-	return render(request, "register_psicologo.html")
 
 def home(request):
 	tipo_usuario = request.session.get('tipo_usuario')
@@ -131,10 +125,14 @@ def home(request):
 def home_user(request):
 	tipo_usuario = request.session.get('tipo_usuario')
 	usuario = request.session.get('usuario')
+	user = usuarios_user.objects.get(email=usuario)
+	entradas = entrada_user.objects.filter(username=user)
 	context = {
 		'tipo_usuario': tipo_usuario,
 		'usuario': usuario,
+		'entradas': entradas,
 	}
+
 	return render(request, "home.html", context=context)
 
 def home_psicologo(request):
@@ -153,6 +151,16 @@ def write_journal(request):
 		'tipo_usuario': tipo_usuario,
 		'usuario': usuario,
 	}
+
+	if request.method == "POST":
+		fecha = request.POST.get("j_date")
+		emoji = request.POST.get("j_emotion")
+		contenido = request.POST.get("j_entrada")
+		user = usuarios_user.objects.get(email=usuario)
+		
+		new_entrada = entrada_user(fecha=fecha, emoji=emoji, contenido=contenido, username=user)
+		new_entrada.save()
+
 	return render(request, "journal.html", context=context)
 
 def show_terms(request):
