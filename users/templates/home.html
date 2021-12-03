@@ -23,7 +23,7 @@ Contiene las opciones que solo un usuario logueado puede ver:
         <li class="dropdown-item border-bottom text-secondary text-center fw-bold">Ajustes</li>
         <li><a class="dropdown-item" href="{% url 'login' %}">{% if usuario %} {{ usuario }} {% else %} Iniciar Sesion {% endif%}</a></li>
         <li><a class="dropdown-item" href="#">Cambiar correo</a></li>
-        <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+        <li><a class="dropdown-item" href="{% url 'change_psswd' %}">Cambiar contraseña</a></li>
         <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>
         <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="{% url 'logout' %}">Cerrar sesión</a></li>
     </ul>      
