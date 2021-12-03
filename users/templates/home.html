@@ -20,10 +20,10 @@ Contiene las opciones que solo un usuario logueado puede ver:
     </a>
     {% endblock %}
     <ul class="dropdown-menu">
-        <li><a class="dropdown-item border-bottom text-secondary text-center fw-bold" href="#">Ajustes</a></li>
+        <li class="dropdown-item border-bottom text-secondary text-center fw-bold">Ajustes</li>
         <li><a class="dropdown-item" href="{% url 'login' %}">{% if usuario %} {{ usuario }} {% else %} Iniciar Sesion {% endif%}</a></li>
-        <li><a class="dropdown-item" href="#">Correo</a></li>
-        <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+        <li><a class="dropdown-item" href="#">Cambiar correo</a></li>
+        <li><a class="dropdown-item" href="{% url 'change_psswd' %}">Cambiar contraseña</a></li>
         <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>
         <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="{% url 'logout' %}">Cerrar sesión</a></li>
     </ul>      
@@ -42,18 +42,11 @@ Contiene las opciones que solo un usuario logueado puede ver:
         </a>
         {% endif%}
    </div>
+   <!-- Todo: Esto es lo que has estado pensando estos días  -->
    <!-- Start table: Muestra registros desde la bdd -->
-
     <div class="row">
         <div class="col scroll">
             <table class="table table-hover text-white text-center m-3" height="100px">
-                <!-- <thead>
-                    <tr>
-                        <th>Emoji</th>
-                        <th>Fecha</th>
-                        <th>Content</th>
-                    </tr>
-                </thead> -->
                     {% for e in entradas %}
                         <tr class="{% cycle 'row1' 'row2' %}">
                             <td>{{ e.emoji }}</td>
@@ -96,18 +89,44 @@ Contiene las opciones que solo un usuario logueado puede ver:
     </div>
     <!-- End estadisticas -->    
 
-    <!-- Start Sugerencias -->    
+    <!-- Start Sugerencias -->
+    <!-- Más puntos indican más felicidad
+        * Enamorado: 50
+        * Feliz: 30
+        * Neutral: -5
+        * Enojado: -10
+        * Triste: -10
+            -->
+       <!-- Mostrar cuando se tengan menos de 20 puntos -->
+    <div class="row justify-content-center">
+        <div class="col-5 text-center"> 
+            {% bs_icon 'exclamation-diamond-fill' size='50px' color='yellow'%}
+            <h3 class="fs-1 text-white">
+                ¿Estás bien?
+            </h3>
+            <p class="fs-3 text-white">Hemos notado que no te has sentido muy bien estos días. 
+                Esperamos que
+                <a href="https://www.youtube.com/watch?v=_AdKwR8LYWo" 
+                class="link-danger">este video</a> te haga sentir mejor 
+                {% bs_icon 'heart-fill' size='10px' color='red'%}</p>
+        </div>
+    </div>   
+     <!-- Mostrar cuando se tengan 0 o menos -->
     <div class="row justify-content-center">
         <div class="col-5 text-center"> 
             {% bs_icon 'exclamation-diamond-fill' size='50px' color='red'%}
             <h3 class="fs-1 text-white">
-                ¿Estás bien?
+                ¡Necesitas ayuda!
             </h3>
-            <p class="fs-3 text-white">Hemos notado que no te has sentido muy bien estos días. Quizá 
-                <a href="#" class="link-danger">este artículo</a> te haga sentir mejor 
+            <p class="fs-3 text-white">Por favor lee 
+                <a href="https://habilidadsocial.com/autocoaching/" class="link-danger">este artículo</a> 
+                y mira <a href="https://www.youtube.com/watch?v=ApxnYNobUEI" class="link-danger">este video</a> 
+                para animarte, también te recomendamos 
+                <a href="https://www.youtube.com/watch?v=hTKDQ5FRB18" class="link-danger">meditar</a> y si
+                necesitas hablar con alguien, no dudes en llamarnos
                 {% bs_icon 'heart-fill' size='10px' color='red'%}</p>
         </div>
-    </div>   
+    </div>       
     <!-- End Sugerencias -->
 </div>
 {% endblock %}

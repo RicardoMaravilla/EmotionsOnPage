@@ -1,9 +1,13 @@
-{% extends "header.html" %}
-
+{% extends "home.html" %}
+{% block title %}<title>Change password</title>{% endblock %}
+{% load bootstrap_icons %}
+{% block background %}<body class="background_6">{% endblock %}
+{% block logo-color %}
+    <h1 class="title_dark p-2">Emotions on Page</h1>  
+{% endblock %}
 {% block content %} 
+<div class="container">
 
-
-{% block title %}Change Password Page{% endblock title %}
 
     <h2 style="font-size: 25px;font-weight: 600;color:white">Change Password</h2>
     <div class="body_container box box--big">
@@ -36,9 +40,9 @@
                         {% endfor %}
                     {% endfor %}
                 {% endif %}
-			<div class="w3ls-bot">
+			<div class="w3ls-bot row justify-content-center text-center m-3">
 				<div class="form-end">
-					<input type="submit" value="Submit">
+					<input type="submit" value="Submit" class="btn btn-info">
 				</div>
 				<div class="clearfix"></div>
                 <br/>
@@ -47,4 +51,9 @@
 
 		</form>
 	</div>
+</div>
 {% endblock %}
+{% block trademark %}<p class="font-weight-normal text-dark fw-bold">&#0169;Emotions On Page, Inc.</p>{% endblock %}
+{% block link1 %}<a href="{% url 'privacy' %}" class="link-info">Privacidad</a>{% endblock %}
+{% block link2 %}<a href="{% url 'terms' %}" class="link-info">Términos</a>{% endblock %}
+{% block legend %}<p class="col font-weight-normal text-dark">Hecho con &hearts;</p>{% endblock %}
