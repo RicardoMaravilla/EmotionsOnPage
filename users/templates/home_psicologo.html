@@ -9,6 +9,7 @@
       {% endblock %}
 {% block nav %}
 <!-- Start Dropdown user -->
+{% if usuario %}
 <div class="col-1 dropdown">
     {% block user-icon-color %}
     <a class="nav-link" data-toggle="dropdown" id="user-menu" role="button">
@@ -19,11 +20,12 @@
         <li><a class="dropdown-item border-bottom text-secondary text-center fw-bold" href="#">Ajustes</a></li>
         <li><a class="dropdown-item" href="#">{{ usuario }}</a></li>
         <li><a class="dropdown-item" href="#">Correo</a></li>
-        <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+        <li><a class="dropdown-item" href="{% url 'change_psswd' %}">Cambiar contraseña</a></li>
         <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>
-        <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="#">Cerrar sesión</a></li>
+        <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="{% url 'logout' %}">Cerrar sesión</a></li>
     </ul>      
     </div>
+{% endif%}
     <!-- End Dropdown user -->
 {% endblock %}
 {% block content %}

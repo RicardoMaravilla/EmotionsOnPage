@@ -11,8 +11,9 @@ Contiene las opciones que solo un usuario logueado puede ver:
         <div class="col">
       {% endblock %}
 {% block nav %}
-{% block user-name %}<h4 class="col-1">User</h4>{% endblock %}
+{% block user-name %}<h4 class="col-1">{% if usuario %} {{ usuario }} {% else %} Inicie sesion para continuar {% endif%}</h4>{% endblock %}
 <!-- Start Dropdown user -->
+{% if usuario %} 
 <div class="col-1 dropdown">
     {% block user-icon-color %}
     <a class="nav-link" data-toggle="dropdown" id="user-menu" role="button">
@@ -21,13 +22,14 @@ Contiene las opciones que solo un usuario logueado puede ver:
     {% endblock %}
     <ul class="dropdown-menu">
         <li class="dropdown-item border-bottom text-secondary text-center fw-bold">Ajustes</li>
-        <li><a class="dropdown-item" href="{% url 'login' %}">{% if usuario %} {{ usuario }} {% else %} Iniciar Sesion {% endif%}</a></li>
+        <li><a class="dropdown-item" href="#">Configuracion</a></li>
         <li><a class="dropdown-item" href="#">Cambiar correo</a></li>
         <li><a class="dropdown-item" href="{% url 'change_psswd' %}">Cambiar contraseña</a></li>
         <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>
         <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="{% url 'logout' %}">Cerrar sesión</a></li>
     </ul>      
     </div>
+{% endif%}
     <!-- End Dropdown user -->
 {% endblock %}
 {% block content %}

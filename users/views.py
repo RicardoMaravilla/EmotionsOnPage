@@ -125,23 +125,28 @@ def home(request):
 def home_user(request):
 	tipo_usuario = request.session.get('tipo_usuario')
 	usuario = request.session.get('usuario')
-	user = usuarios_user.objects.get(email=usuario)
-	entradas = entrada_user.objects.filter(username=user)
-	context = {
-		'tipo_usuario': tipo_usuario,
-		'usuario': usuario,
-		'entradas': entradas,
-	}
+	if usuario:
+		user = usuarios_user.objects.get(email=usuario)
+		entradas = entrada_user.objects.filter(username=user)
+		context = {
+			'tipo_usuario': tipo_usuario,
+			'usuario': usuario,
+			'entradas': entradas,
+		}
+		return render(request, "home.html", context=context)
 
-	return render(request, "home.html", context=context)
+	return render(request, "home.html")
 
 def home_psicologo(request):
 	tipo_usuario = request.session.get('tipo_usuario')
 	usuario = request.session.get('usuario')
-	context = {
-		'tipo_usuario': tipo_usuario,
-		'usuario': usuario,
-	}
+	if usuario:
+		psicologo = usuarios_user.objects.get(email=usuario)
+		context = {
+			'tipo_usuario': tipo_usuario,
+			'usuario': usuario,
+		}
+		return render(request, "home_psicologo.html", context=context)
 	return render(request, "home_psicologo.html")
 
 def write_journal(request):
