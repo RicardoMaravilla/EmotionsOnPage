@@ -1,26 +1,134 @@
 {% extends "base.html" %}
 {% block background %}<body class="background_6">{% endblock %}
-{% block logo-color %}<h1 class="title_dark p-2">Emotions on Page</h1>{% endblock %}
+{% block logo-color %}<h1 class="title_dark p-2">Emotions on Page</h1> <h1>Playlist/Podcasts</h1>{% endblock %}
 {% load bootstrap_icons %}
 {% block title %}<title>Recomendaciones</title>{% endblock %}
 {% block content %}
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    
+</head>
 
-<div class="container-fluid ">
-    <div class="row text-center justify-content-center align-item-center" style="padding: 30px 15px 225px;" >
-        <h1 class="col-3 text-center ">PLAYLISTS</h1>
-        <div class="col-11"><img src="../static/img/meditacion.jpg" alt="meditacion" class="col-2"></div>
-        
-        <div class="col-11 m-2"></div>
-        <h1 class="col-3" ><a href="https://open.spotify.com/playlist/37i9dQZF1DWZqd5JICZI0u" class="link-info"> PacefulMeditation </a></h1>
-        <div class="col-11"><img src="../static/img/meditacion1.jpg" alt="meditacion1" class="col-2"></div>
-        
-        <h1 class="col-3"><a href="https://open.spotify.com/show/202yW1Cn0UMsf88Mx9utXL">Meditacion Guiada</a></h1> 
+<div class="contenedor">
+    
+    
+    <div class="elemento">
+        <h2 ><img src="../static/img/meditacion.jpg" alt="" width="220px" height="230px" class="izquierda">
 
+        </h2>
+        <h4>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DWZqd5JICZI0u" style="color: blueviolet;">
+                PacefulMeditation
+            </a>
+        </h4>
     </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/meditacion1.jpg" alt="" width="220px" height="230px" class="izquierda">
+
+        </h2>
+        <h4>
+            <a href="https://open.spotify.com/show/202yW1Cn0UMsf88Mx9utXL" style="color: blueviolet;">
+                Meditacion Guiada
+            </a>
+        </h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/med.jpg" alt="" width="220px" height="230px" class="izquierda">
+
+        </h2>
+        <h4>
+            <a href="https://open.spotify.com/show/4TmUpG1YdJMa4aAnp9s21F" style="color: blueviolet;">
+                Meditada
+            </a>
+        </h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/med2.jpg" alt="" width="220px" height="230px" class="izquierda">
+
+        </h2>
+        <h4>
+            <a href="https://open.spotify.com/show/0KUjSzqMyxrTyXuw15j4e8" style="color: blueviolet;">
+                Se Regalan Dudas
+            </a>
+        </h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/med1.jpg" alt="" width="220px" height="230px" class="izquierda">
+
+        </h2>
+        <h4>
+            <a href="https://open.spotify.com/show/5cWicUfe4snqTgrJdVvLvb" style="color: blueviolet;">
+                Salud Emocional
+            </a>
+        </h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/med3.jpg" alt="" width="220px" height="230px" class="izquierda">
+
+        </h2>
+        <h4>
+            <a href="https://open.spotify.com/show/4H9hNPW7uTpgCD0wwErLxk" style="color: blueviolet;">
+                Salud Mental con Alan 
+            </a>
+        </h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/med4.jpg" alt="" width="220px" height="230px" class="izquierda">
+
+        </h2>
+        <h4>
+            <a href="https://open.spotify.com/show/0sGGLIDnnijRPLef7InllD" style="color: blueviolet;">
+                Entiende Tu Mente
+            </a>
+        </h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/med5.jpg" alt="" width="220px" height="230px" class="izquierda">
+
+        </h2>
+        <h4>
+            <a href="https://open.spotify.com/show/4vYiWBbDhNbF7Enulrvi5l" style="color: blueviolet;">
+                Enterapia con Roberto Rocha
+            </a>
+        </h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/med6.jpg" alt="" width="220px" height="230px" class="izquierda">
+
+        </h2>
+        <h4>
+            <a href="https://open.spotify.com/show/5YL4n5woXEUqfVNWHsSJJy" style="color: blueviolet;">
+                ¡Con Amor, Carajo!
+            </a>
+        </h4>
+    </div>
+    <div class="elemento">
+        <h2 style="color: blueviolet;"><img src="../static/img/med7.jpg" alt="" width="220px" height="230px" class="izquierda">
+
+        </h2>
+        <h4>
+            <a href="https://open.spotify.com/show/0iZZjs75nPNS81nm6kXz3C" style="color: blueviolet;">
+                La Historia Jamás Contada 
+            </a>
+        </h4>
+    </div>
+    
+    
+
+
+
+
+    
 </div>
-
-
-
-
+<script>
+    var elem = document.querySelector('.contenedor');
+    var msnry = new Masonry( elem, {
+    // options
+    itemSelector: '.elemento',
+    });
+</script>
 
 {% endblock %}
+
+
