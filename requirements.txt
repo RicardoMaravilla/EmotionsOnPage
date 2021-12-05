@@ -41,3 +41,8 @@ toml==0.10.2
 urllib3==1.26.7
 whitenoise==5.3.0
 wrapt==1.12.1
+#Chat
+daphne==2.4.1
+psycopg2-binary
+channels==2.4.0
+channels_redis

@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'users',
     'questionary',
     'EmotionsOnPage',
+    'channels',
+    'app.chat',
+    'app.front',
 ]
 
 MIDDLEWARE = [
