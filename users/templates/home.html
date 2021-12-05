@@ -11,7 +11,7 @@ Contiene las opciones que solo un usuario logueado puede ver:
         <div class="col">
       {% endblock %}
 {% block nav %}
-{% block user-name %}<h4 class="col-1">{% if usuario %} {{ usuario }} {% else %} Inicie sesion para continuar {% endif%}</h4>{% endblock %}
+{% block user-name %}<h4 class="col-2 text-light">{% if usuario %} {{ usuario }} {% else %} Inicia sesion para continuar {% endif%}</h4>{% endblock %}
 <!-- Start Dropdown user -->
 {% if usuario %} 
 <div class="col-1 dropdown">
@@ -23,7 +23,7 @@ Contiene las opciones que solo un usuario logueado puede ver:
     <ul class="dropdown-menu">
         <li class="dropdown-item border-bottom text-secondary text-center fw-bold">Ajustes</li>
         <li><a class="dropdown-item" href="#">Configuracion</a></li>
-        <li><a class="dropdown-item" href="#">Cambiar correo</a></li>
+        <li><a class="dropdown-item" href="{% url 'change_mail' %}">Cambiar correo</a></li>
         <li><a class="dropdown-item" href="{% url 'change_psswd' %}">Cambiar contraseña</a></li>
         <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>
         <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="{% url 'logout' %}">Cerrar sesión</a></li>
@@ -35,18 +35,20 @@ Contiene las opciones que solo un usuario logueado puede ver:
 {% block content %}
 <div class="container m-5">
    <div class="row justify-content-center m-3">
-        <h3 class="col-5 fs-1 text-white">
+        <h3 class="col-3 fs-1 text-white">
             Mis entradas
         </h3>
         {% if usuario %}
-        <a href="{% url 'journal' %}"class="col">
+        <p class="text-light">Agregar entrada</p>
+        <a href="{% url 'journal' %}"class="col-2">
             {% bs_icon 'plus-square-fill' size='33px' color='#E2ADF2'%}
         </a>
+        <p class="col text-light">He aquí lo que has agregado estos días...</p>
         {% endif%}
    </div>
    <!-- Todo: Esto es lo que has estado pensando estos días  -->
    <!-- Start table: Muestra registros desde la bdd -->
-    <div class="row">
+   <div class="row">  
         <div class="col scroll">
             <table class="table table-hover text-white text-center m-3" height="100px">
                     {% for e in entradas %}
@@ -61,6 +63,9 @@ Contiene las opciones que solo un usuario logueado puede ver:
          <p class="col border border-light text-white p-3 scroll">
            {{ entradas.0.contenido }}
         </p>
+        <h5 class="col-12 offset-4 mb-5 display-5 text-light">No has agregado ninguna entrada
+            {% bs_icon 'emoji-frown' size='33px' color='white'%}
+            </h5> 
     </div>
 <!-- End table: Muestra registros desde la bdd --> 
 
@@ -72,6 +77,9 @@ Contiene las opciones que solo un usuario logueado puede ver:
                 Mis estadísticas
             </h3>
         </div>
+        <h5 class="col-12 offset-4 mb-5 display-5 text-light">No hay suficientes datos para mostrar estadísticas 
+            {% bs_icon 'emoji-frown' size='33px' color='white'%}
+        </h5>
         <div class="col">
             <p class="emojis">&#128525; 4</p> 
         </div>

@@ -1,6 +1,6 @@
 <!-- Vista para registrar usuarios -->
 {% extends "base.html" %}
-{% block background %}<body class="background_2">{% endblock %}
+{% block background %}<body class="background_2" >{% endblock %}
   {% block logo-color %}<h1 class="title_dark m-3 p-3">Emotions on Page</h1>{% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}  
@@ -49,6 +49,6 @@
 <!-- End form -->
 {% endblock %}
 {% block trademark %}<p class="col font-weight-normal text-dark">&#0169;Emotions On Page, Inc.</p>{% endblock %}
-{% block link1 %}<a href="{% url 'privacy' %}" class="link_4">Privacidad</a>{% endblock %}
-{% block link2 %}<a href="{% url 'terms' %}" class="link_4">Términos</a>{% endblock %}
+{% block link1 %}<a href="{% url 'privacy' %}" class="link-info">Privacidad</a>{% endblock %}
+{% block link2 %}<a href="{% url 'terms' %}" class="link-info">Términos</a>{% endblock %}
 {% block legend %}<p class="col font-weight-normal text-dark">Hecho con &hearts;</p>{% endblock %}

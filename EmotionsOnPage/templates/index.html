@@ -6,12 +6,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plantilla básica de Bootstrap</title>
+  <title>Home</title>
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <!-- CSS de Bootstrap -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
 
   <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
   <!--[if lt IE 9]>
@@ -30,7 +31,7 @@
 <body href="{% static 'css/style.css' %}">
   <header class="navbar navbar-expand-lg ">
     <div class="container">
-      <a class="navbar-brand mb-0 h1" href="#">EMOTION ON PAGE</a>
+      <a class="navbar-brand mb-0 h1 title_dark" href="{% url 'index' %}">Emotions on Page</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <ion-icon name="menu-outline"></ion-icon>
@@ -38,8 +39,8 @@
       
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <a href="#" class="btn btn-lg ml-auto">Sing Up</a>
-        <a href="#" class="btn btn-lg float-right">Login</a>
+        <a href="{% url 'register_user' %}" class="btn btn-lg ml-auto">Registrarte</a>
+        <a href="{% url 'login' %}" class="btn btn-lg float-right">Iniciar sesión</a>
         
       </div>
     </div>
@@ -54,22 +55,22 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav col-md-9 ml-md-auto">
-          <li class="nav-item ">
-            <a class="nav-link" href="http://127.0.0.1:8000/" id="home">Inicio | </a>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="{% url 'index' %}" id="home">Inicio | </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'emociones' %}" id="NYF">Emociones| </a>
+            <a class="nav-link text-dark" href="{% url 'emociones' %}" id="NYF">Emociones | </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'wikis' %}" id="Wikis">Wikis | </a>
+            <a class="nav-link text-dark" href="{% url 'wikis' %}" id="Wikis">Wikis | </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" id="wh">Ayuda? | </a>
+            <a class="nav-link text-dark" href="{% url 'recomendaciones' %}" id="re">Recomendaciones |</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'recomendaciones' %}" id="re">Recomendaciones | </a>
-          </li>
+            <a class="nav-link text-dark" href="{% url 'test_emotions' %}" id="wh">Ayuda </a>
+          </li>  
         </ul>
       </div>
     </div>
@@ -84,9 +85,9 @@
         <br>
         <h1 class="font">¿COMO TE SIENTES HOY?</h1>
         <p class="font1">
-          Escribir en mi journal.
+          Escribirlo en mi journal
         </p>
-        <a href="#" class="btn btn-light">Iniciar</a>
+        <a href="{% url 'login' %}" class="btn btn-light">¡Go!</a>
       </div>
     </div>
   </section>
@@ -99,9 +100,9 @@
         <br>
         <h1 class="font">¿CONFUNDIDO?</h1>
         <p class="font1">
-          Realiza el test para saber como te sientes 
+          Realiza el test para ayudarte saber como te sientes 
         </p>
-        <a href="#" class="btn btn-light">Iniciar</a>
+        <a href="{% url 'test_emotions' %}" class="btn btn-light">Iniciar</a>
       </div>
     </div>
   </section>
@@ -114,9 +115,9 @@
         <br>
         <h1 class="font">¿GANAS DE EXPLORAR?</h1>
         <p class="font1">
-          Busca sobre un tema.
+          Busca sobre un tema en nuestras wikis y recomendaciones.
         </p>
-        <a href="#" class="btn btn-light">Iniciar</a>
+        <a href="{% url 'wikis' %}" class="btn btn-light">Echar un vistazo</a>
       </div>
     </div>
   </section>
@@ -127,8 +128,11 @@
         <br>
         <br>
         <br>
-        <h1 class="font">ERES PSICOLOGO</h1>
-        <a href="#" class="btn btn-light">Registro</a>
+        <h1 class="font">¿ERES PSICOLOGO?</h1>
+        <p class="font1">
+          Sé uno de nuestros guías para ayudar a miles de personas
+        </p>
+        <a href="{% url 'register_psicologo' %}" class="btn btn-light">Registrarme</a>
       </div>
     </div>
   </section>
