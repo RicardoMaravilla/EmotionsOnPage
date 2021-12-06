@@ -1,7 +1,7 @@
 {% extends 'home.html' %}
 {% load static %}
 {% block chat-style %}<link rel="stylesheet" href="{% static 'css/style3.css' %}">{% endblock %}
-{% block title %}<title>Chat</title>{% endblock %}
+{% block title %}<title>Chat psicólogo</title>{% endblock %}
 {% load bootstrap_icons %}
 {% block background %}<body class="background_6">{% endblock %}
 {% block logo-color %}<h1 class="title_dark p-2">Emotions on Page</h1>{% endblock %}
@@ -10,16 +10,15 @@
     <div class="padding">
         <div class="row container d-flex justify-content-center">
             <div class="row justify-content-center m-2">
-                <p class="col-7 bg-light">¡Bienvenido al chat! Aquí podrás hacer preguntas a nuestros especialistas &#10024;</p>
+                <p class="col-8 bg-light">¡Bienvenido al chat! Aquí podrás hacer tus consultas &#10024;</p>
             </div>
             <div class="col-12"></div>
             <div class="col-5 text-dark bg-light p-5 m-2">
-                <p class="text-center">Uno de nuestros psicólogos se pondrá contigo en contacto a la brevedad, procura expresar tu situación de la forma más clara posible
-                    y no temas preguntar lo que sea, estamos para ayudarte, ¡no seas tímido!
+                <p class="text-center">Por favor, inicia la conversación con tu paciente y muéstrale que estás abierto a escucharlo, ¡anímalo!.
                 </p>
                 <p class="m-1">.</p>
-                <p class="text-center"> <strong>No temas ser tú mismo</strong></p>
-                <p class="text-center">Aquí no hay reglas para expresar lo que sientes o piensas, mientras más detalles des le será más fácil a nuestro psicólogo conocerte y comprenderte.</p>
+                <p class="text-center"> <strong>Sé profesional</strong></p>
+                <p class="text-center">Es importante ser amigable y hacer sentir lo mejor posible a nuestro pacientes, ¡demuestra tus habilidades!</p>
                 <p class="text-center">Recuerda: no temas expresarte pero sé respetuoso 
                     {% bs_icon 'emoji-smile' size='15px' color='black'%}</p>
                 <p class="m-4">.</p>
@@ -43,18 +42,17 @@
                     </div>
                     <div class="box-body">
                         <div class="direct-chat-messages">
-                            <div class="direct-chat-msg">
-                                <div class="direct-chat-info clearfix"> 
-                                    <span class="direct-chat-name pull-left">Psicólogo Pérez</span> 
-                                    <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span> </div>
-                                    <img class="direct-chat-img" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="message user image">
-                                <div class="direct-chat-text"> Hola buen día!, soy tu psicologo, ¿que es lo k te pasa amigooo? uwu </div>
-                            </div>
                             <div class="direct-chat-msg right">
                                 <div class="direct-chat-info clearfix"> <span class="direct-chat-name pull-right">Tú</span> <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span> </div> 
-                                <img class="direct-chat-img" src="https://img.icons8.com/office/36/000000/person-female.png" alt="message user image">
-                                <!-- <p class="col-1 offset-9">{% bs_icon 'person-fill' size='30px' color='#E2ADF2'%} </p> -->
-                                <div class="direct-chat-text"> Help mi plis uwu </div>
+                                <img class="direct-chat-img" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="message user image">
+                                <div class="direct-chat-text"> Hola buen día!, soy tu psicologo, ¿que es lo k te pasa amigooo? uwu</div>
+                            </div>
+                            <div class="direct-chat-msg">
+                                <div class="direct-chat-info clearfix"> 
+                                    <span class="direct-chat-name pull-left">Paciente</span> 
+                                    <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span> </div>
+                                    <img class="direct-chat-img" src="https://img.icons8.com/office/36/000000/person-female.png" alt="message user image">
+                                <div class="direct-chat-text"> Help mi plis uwu</div>
                             </div>
                         </div>
                         &nbsp;

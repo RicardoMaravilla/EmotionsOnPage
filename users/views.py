@@ -194,6 +194,9 @@ def show_wikis(request):
 
 def show_chat(request): 
 	return render(request,"chat.html") 
+
+def show_chat_psicologo(request): 
+	return render(request,"chat_psicologo.html") 
 	
 # Agregar el cambio de password
 def change_psswd(request):

@@ -22,10 +22,10 @@ Contiene las opciones que solo un usuario logueado puede ver:
     {% endblock %}
     <ul class="dropdown-menu">
         <li class="dropdown-item border-bottom text-secondary text-center fw-bold">Ajustes</li>
-        <li><a class="dropdown-item" href="#">Configuracion</a></li>
         <li><a class="dropdown-item" href="{% url 'change_mail' %}">Cambiar correo</a></li>
         <li><a class="dropdown-item" href="{% url 'change_psswd' %}">Cambiar contraseña</a></li>
         <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>
+        <li><a class="dropdown-item" href="{% url 'chat' %}">Chat</a></li>
         <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="{% url 'logout' %}">Cerrar sesión</a></li>
     </ul>      
     </div>

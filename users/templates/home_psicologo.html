@@ -7,7 +7,8 @@
     <div class="row justify-content-around align-item-center m-3 p-3">
         <div class="col">
       {% endblock %}
-{% block nav %}
+    {% block nav %}
+      {% block user-name %}<h4 class="col-2 text-light">{% if usuario %} {{ usuario }} {% else %} Inicia sesion para continuar {% endif%}</h4>{% endblock %}
 <!-- Start Dropdown user -->
 {% if usuario %}
 <div class="col-1 dropdown">
@@ -17,9 +18,9 @@
     </a>
     {% endblock %}
     <ul class="dropdown-menu">
-        <li><a class="dropdown-item border-bottom text-secondary text-center fw-bold" href="#">Ajustes</a></li>
-        <li><a class="dropdown-item" href="#">{{ usuario }}</a></li>
-        <li><a class="dropdown-item" href="#">Correo</a></li>
+        <li class="dropdown-item border-bottom text-secondary text-center fw-bold">Ajustes</li>
+        <li class="dropdown-item">{{ usuario }}</li>
+        <li><a class="dropdown-item" href="{% url 'change_mail' %}"">Correo</a></li>
         <li><a class="dropdown-item" href="{% url 'change_psswd' %}">Cambiar contraseña</a></li>
         <li><a class="dropdown-item" href="{% url 'home_user' %}">Mis entradas</a></li>
         <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="{% url 'logout' %}">Cerrar sesión</a></li>
@@ -32,7 +33,7 @@
 <div class="container">
     <div class="row justify-content-center text-center text-white">
         <p class="col lead">
-           <a href="#">{% bs_icon 'messenger' size='30px' color='#38A8FA'%}</a> 
+           <a href="{% url 'chat_psicologo' %}">{% bs_icon 'messenger' size='30px' color='#38A8FA'%}</a> 
            Iniciar un chat
         </p>
     </div>

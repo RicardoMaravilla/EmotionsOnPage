@@ -39,4 +39,5 @@ urlpatterns = [
     path("recomendaciones/",users_views.show_recomendaciones,name="recomendaciones"),
     path("wikis/",users_views.show_wikis,name="wikis"),
     path("chat/",users_views.show_chat,name="chat"),
+    path("chat_psicologo/",users_views.show_chat_psicologo,name="chat_psicologo"),
 ]
