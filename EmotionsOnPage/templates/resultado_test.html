@@ -6,6 +6,7 @@
 {% block content %}
 <div class="container-fluid background_6">
     <!-- Enamorado -->
+    {% if resultado == 'in-love' %}
     <div id="in-love" class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;">
         <h1 class="display-3"><strong>Resultado</strong></h1>
         <h3 class="col-12 display-5 m-3">Sientes <strong class="text-danger">amor</strong></h3>
@@ -23,6 +24,8 @@
         <a href="{% url 'test_emotions' %}" class="col-1 btn btn-info m-4">Volver a intentar</a> 
         <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
     </div>
+    {% endif %}
+    {% if resultado == 'happy' %}
     <!-- Feliz -->
     <div id="happy" class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;">
         <h1 class="display-3"><strong>Resultado</strong></h1>
@@ -41,6 +44,8 @@
         <a href="{% url 'test_emotions' %}" class="col-1 btn btn-info m-4">Volver a intentar</a> 
         <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
     </div>
+    {% endif %}
+    {% if resultado == 'neutral' %}
     <!-- Neutral -->
     <div id="neutral" class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;">
         <h1 class="display-3"><strong>Resultado</strong></h1>
@@ -59,6 +64,8 @@
         <a href="{% url 'test_emotions' %}" class="col-1 btn btn-info m-4">Volver a intentar</a> 
         <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
     </div>
+    {% endif %}
+    {% if resultado == 'angry' %}
     <!-- Enojado -->
     <div id="angry" class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;">
         <h1 class="display-3"><strong>Resultado</strong></h1>
@@ -77,6 +84,8 @@
         <a href="{% url 'test_emotions' %}" class="col-1 btn btn-info m-4">Volver a intentar</a> 
         <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
     </div>
+    {% endif %}
+    {% if resultado == 'sad' %}
     <!-- Triste -->
     <div id="sad" class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;">
         <h1 class="display-3"><strong>Resultado</strong></h1>
@@ -95,6 +104,7 @@
         <a href="{% url 'test_emotions' %}" class="col-1 btn btn-info m-4">Volver a intentar</a> 
         <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
     </div>
+    {% endif %}
 </div>
 
 {% endblock %}

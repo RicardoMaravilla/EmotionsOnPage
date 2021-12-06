@@ -34,7 +34,6 @@ Contiene las opciones que solo un usuario logueado puede ver:
 {% endblock %}
 {% block content %}
 <div class="container m-5">
-    {% if cantidad_entradas > 0 %}
    <div class="row justify-content-center m-3">
         <h3 class="col-3 fs-1 text-white">
             Mis entradas
@@ -45,10 +44,11 @@ Contiene las opciones que solo un usuario logueado puede ver:
             {% bs_icon 'plus-square-fill' size='33px' color='#E2ADF2'%}
         </a>
         <p class="col text-light">He aquí lo que has agregado estos días...</p>
-        {% endif%}
+
    </div>
    <!-- Todo: Esto es lo que has estado pensando estos días  -->
    <!-- Start table: Muestra registros desde la bdd -->
+   {% if cantidad_entradas > 0 %}
    <div class="row">  
         <div class="col scroll">
             <table class="table table-hover text-white text-center m-3" height="100px">
@@ -65,6 +65,7 @@ Contiene las opciones que solo un usuario logueado puede ver:
            {{ entradas.0.contenido }}
         </p>
     </div>
+    {% endif %}
     {% endif %}
     {% if cantidad_entradas == 0 %}
     <h5 class="col-12 offset-4 mb-5 display-5 text-light">No has agregado ninguna entrada

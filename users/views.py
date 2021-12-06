@@ -201,10 +201,42 @@ def show_privacy(request):
 	return render(request, "privacidad.html")
 
 def show_test(request):
-	return render(request, "test.html")
+	tipo_usuario = request.session.get('tipo_usuario')
+	usuario = request.session.get('usuario')
+	context = {
+		'tipo_usuario': tipo_usuario,
+		'usuario': usuario,
+	}
+
+	return render(request, "test.html", context=context)
 
 def show_test_result(request):
-	return render(request, "resultado_test.html")
+	tipo_usuario = request.session.get('tipo_usuario')
+	usuario = request.session.get('usuario')
+
+	if request.method == "POST":
+		face = request.POST.get("face")
+		dolor = request.POST.get("dolor")
+		cancion = request.POST.get("cancion")
+
+		if(face == 'in-love' and dolor=='in-love' and cancion == 'in-love'):
+			resultado = 'in-love'
+		if(face == 'angry' and dolor=='angry' and cancion == 'angry'):
+			resultado = 'angry'
+		if(face == 'happy' and dolor=='happy' and cancion == 'happy'):
+			resultado = 'happy'
+		if(face == 'sad' and dolor=='sad' and cancion == 'sad'):
+			resultado = 'sad'
+		if(face == 'neutral' and dolor=='neutral' and cancion == 'neutral'):
+			resultado = 'neutral'
+		else:
+			resultado = 'neutral'
+		context = {
+			'tipo_usuario': tipo_usuario,
+			'usuario': usuario,
+			'resultado': resultado,
+		}
+	return render(request, "resultado_test.html", context=context)
 
 def show_emociones(request):
 	return render(request, "emociones.html")

@@ -15,7 +15,8 @@
         </a>
     </div>
 </div>
-<form action="{% url 'test_result' %}">
+<form action="{% url 'test_result' %}" method="post">
+    {% csrf_token %}
     <div class="container-fluid background_3">
         <div class="row text-center justify-content-center align-item-center" style="padding: 30px 15px 225px;" id="faces">
             <p class="col-3 text-center text-white">Mírate en un espejo sin forzar tu expresión y selecciona la imagen que más se parezca a la tuya</p>
