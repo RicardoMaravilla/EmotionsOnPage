@@ -128,10 +128,35 @@ def home_user(request):
 	if usuario:
 		user = usuarios_user.objects.get(email=usuario)
 		entradas = entrada_user.objects.filter(username=user)
+		entradas_128525 = entradas.filter(emoji = '😍').count()
+		entradas_128513 = entradas.filter(emoji = '😁').count()
+		entradas_128528 = entradas.filter(emoji = '😐').count()
+		entradas_128545 = entradas.filter(emoji = '😡').count()
+		entradas_128546 = entradas.filter(emoji = '😢').count()
+
+		cantidad_entradas = entradas.count()
+		val_total_entradas = (entradas_128525*50) + (entradas_128513*30) + (entradas_128528*-5) + (entradas_128545*-10) + (entradas_128546*-15)
+
+		if(val_total_entradas > 50):
+			resultado_entradas =  'regular'
+		elif(val_total_entradas > 20 and val_total_entradas <= 50):
+			resultado_entradas =  'advertencia'
+		else:
+			resultado_entradas =  'peligro'
+
+		print(resultado_entradas)
+
 		context = {
 			'tipo_usuario': tipo_usuario,
 			'usuario': usuario,
 			'entradas': entradas,
+			'entradas_128525': entradas_128525,
+			'entradas_128513': entradas_128513,
+			'entradas_128528': entradas_128528,
+			'entradas_128545': entradas_128545,
+			'entradas_128546': entradas_128546,
+			'resultado_entradas': resultado_entradas,
+			'cantidad_entradas': cantidad_entradas,
 		}
 		return render(request, "home.html", context=context)
 
@@ -165,6 +190,7 @@ def write_journal(request):
 		
 		new_entrada = entrada_user(fecha=fecha, emoji=emoji, contenido=contenido, username=user)
 		new_entrada.save()
+		return redirect("home_user")
 
 	return render(request, "journal.html", context=context)
 
@@ -200,21 +226,50 @@ def show_chat_psicologo(request):
 	
 # Agregar el cambio de password
 def change_psswd(request):
-    if request.method == 'POST':
-        form = PasswordChangeForm(request.user, request.POST)
-        if form.is_valid():
-            user = form.save()
-            update_session_auth_hash(request, user)  # Important!
-            messages.success(request, 'Your password was successfully updated!')
-            return redirect('login')
-        else:
-            messages.error(request, 'Please correct the error below.')
-    else:
-        form = PasswordChangeForm(request.user)
-    return render(request=request, template_name="change_psswd.html", context={"change_psswd":form})
+	tipo_usuario = request.session.get('tipo_usuario')
+	usuario = request.session.get('usuario')
+	context = {
+		'tipo_usuario': tipo_usuario,
+		'usuario': usuario,
+	}
+
+	if request.method == "POST":
+		old_password = request.POST.get("old_password")
+		password1 = request.POST.get("new_password1")
+		password2 = request.POST.get("new_password2")
+		user = usuarios_user.objects.get(email=usuario)
+		if(old_password == user.password):
+			if(password1 == password2):
+				user.password = password1
+				user.save()
+				return redirect("home_user")
+		else:
+			messages.error(request, "The old password is incorrect.")
+
+	return render(request, "change_psswd.html", context=context)
 
 def change_mail(request):
-	return render(request,"change_mail.html")
+	tipo_usuario = request.session.get('tipo_usuario')
+	usuario = request.session.get('usuario')
+	context = {
+		'tipo_usuario': tipo_usuario,
+		'usuario': usuario,
+	}
+
+	if request.method == "POST":
+		old_mail = request.POST.get("old_mail")
+		mail1 = request.POST.get("new_mail1")
+		mail2 = request.POST.get("new_mail2")
+		user = usuarios_user.objects.get(email=usuario)
+		if(old_mail == user.email):
+			if(mail1 == mail2):
+				user.email = mail1
+				user.save()
+				return redirect("home_user")
+		else:
+			messages.error(request, "The old mail is incorrect.")
+
+	return render(request, "change_mail.html", context=context)
 
 # Login con email en vez de username
 

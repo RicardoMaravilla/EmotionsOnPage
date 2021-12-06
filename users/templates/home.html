@@ -11,7 +11,7 @@ Contiene las opciones que solo un usuario logueado puede ver:
         <div class="col">
       {% endblock %}
 {% block nav %}
-{% block user-name %}<h4 class="col-2 text-light">{% if usuario %} {{ usuario }} {% else %} Inicia sesion para continuar {% endif%}</h4>{% endblock %}
+{% block user-name %}<h4 class="col-2 text-light">{% if usuario %} {{ usuario }} {% else %} Inicia sesion para continuar {% endif %}</h4>{% endblock %}
 <!-- Start Dropdown user -->
 {% if usuario %} 
 <div class="col-1 dropdown">
@@ -29,11 +29,12 @@ Contiene las opciones que solo un usuario logueado puede ver:
         <li><a class="dropdown-item border-top text-secondary text-center fw-bold" href="{% url 'logout' %}">Cerrar sesión</a></li>
     </ul>      
     </div>
-{% endif%}
+{% endif %}
     <!-- End Dropdown user -->
 {% endblock %}
 {% block content %}
 <div class="container m-5">
+    {% if cantidad_entradas > 0 %}
    <div class="row justify-content-center m-3">
         <h3 class="col-3 fs-1 text-white">
             Mis entradas
@@ -63,10 +64,13 @@ Contiene las opciones que solo un usuario logueado puede ver:
          <p class="col border border-light text-white p-3 scroll">
            {{ entradas.0.contenido }}
         </p>
-        <h5 class="col-12 offset-4 mb-5 display-5 text-light">No has agregado ninguna entrada
-            {% bs_icon 'emoji-frown' size='33px' color='white'%}
-            </h5> 
     </div>
+    {% endif %}
+    {% if cantidad_entradas == 0 %}
+    <h5 class="col-12 offset-4 mb-5 display-5 text-light">No has agregado ninguna entrada
+        {% bs_icon 'emoji-frown' size='33px' color='white'%}
+        </h5> 
+    {% endif %}
 <!-- End table: Muestra registros desde la bdd --> 
 
 <!-- Start estadisticas -->
@@ -77,24 +81,28 @@ Contiene las opciones que solo un usuario logueado puede ver:
                 Mis estadísticas
             </h3>
         </div>
+        {% if cantidad_entradas <= 5 %} 
         <h5 class="col-12 offset-4 mb-5 display-5 text-light">No hay suficientes datos para mostrar estadísticas 
             {% bs_icon 'emoji-frown' size='33px' color='white'%}
         </h5>
+        {% endif %}
+        {% if cantidad_entradas > 5 %}
         <div class="col">
-            <p class="emojis">&#128525; 4</p> 
+            <p class="emojis">&#128525; {{ entradas_128525 }}</p> 
         </div>
         <div class="col">
-            <p class="emojis">&#128513; 1</p>
+            <p class="emojis">&#128513; {{ entradas_128513 }}</p>
         </div>
         <div class="col">
-            <p class="emojis">&#128528; 4</p>
+            <p class="emojis">&#128528; {{ entradas_128528 }}</p>
         </div>
         <div class="col">
-            <p class="emojis">&#128545; 3</p>
+            <p class="emojis">&#128545; {{ entradas_128545 }}</p>
         </div>
         <div class="col">
-            <p class="emojis">&#128546; 2</p>
+            <p class="emojis">&#128546; {{ entradas_128546 }}</p>
         </div>  
+        {% endif %}
         <div class="col-12 m-3"></div> <!--Necesario para el margin-->
     </div>
     <!-- End estadisticas -->    
@@ -107,8 +115,10 @@ Contiene las opciones que solo un usuario logueado puede ver:
         * Enojado: -10
         * Triste: -10
             -->
+    {% if cantidad_entradas > 5 %} 
     <div class="row justify-content-center">
         <!-- Mostrar cuando se tengan más de 50 puntos -->
+        {% if resultado_entradas == 'regular' %} 
         <div class="col-5 text-center"> 
             {% bs_icon 'check-circle-fill' size='50px' color='green'%}
             <h3 class="fs-1 text-white">
@@ -117,6 +127,8 @@ Contiene las opciones que solo un usuario logueado puede ver:
             <p class="fs-3 text-white">Esperamos que te mantengas con ese ánimo, ¡nunca pares de sonreír!
                 {% bs_icon 'emoji-laughing-fill' size='15px' color='yellow'%}</p>
         </div>
+        {% endif %}
+        {% if resultado_entradas == 'advertencia' %} 
         <!-- Mostrar cuando se tengan menos de 20 puntos -->
         <div class="col-5 text-center"> 
             {% bs_icon 'exclamation-diamond-fill' size='50px' color='yellow'%}
@@ -129,6 +141,8 @@ Contiene las opciones que solo un usuario logueado puede ver:
                 class="link-danger">este video</a> te haga sentir mejor 
                 {% bs_icon 'heart-fill' size='10px' color='red'%}</p>
         </div>
+        {% endif %}
+        {% if resultado_entradas == 'peligro' %}
         <!-- Mostrar cuando se tengan 0 o menos -->
         <div class="col-5 text-center"> 
             {% bs_icon 'exclamation-diamond-fill' size='50px' color='red'%}
@@ -143,7 +157,9 @@ Contiene las opciones que solo un usuario logueado puede ver:
                 necesitas hablar con alguien, no dudes en llamarnos
                 {% bs_icon 'heart-fill' size='10px' color='red'%}</p>
         </div>
+        {% endif %}
     </div>   
+    {% endif %}
     <!-- End Sugerencias -->
 </div>
 {% endblock %}
