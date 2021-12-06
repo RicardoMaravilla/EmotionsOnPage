@@ -177,6 +177,9 @@ def show_privacy(request):
 def show_test(request):
 	return render(request, "test.html")
 
+def show_test_result(request):
+	return render(request, "resultado_test.html")
+
 def show_emociones(request):
 	return render(request, "emociones.html")
 

@@ -11,90 +11,114 @@
         <p class="col-3 bg-light">Hoy sabrás como te sientes (O al menos te darás una idea) &#128161; Gracias a la magia de nuestro test &#10024;</p>
         <h3 class="col-12 display-5 m-3">¿Asustado, Potter?</h3>
         <a href="#faces" class="col">
-            <button type="button" class="btn btn-info m-2" href="#faces">Ni un poco</button>    
+            <button type="button" class="btn btn-info m-2">Ni un poco</button>    
         </a>
     </div>
 </div>
-<div class="container-fluid background_3">
-    <div class="row text-center justify-content-center align-item-center" style="padding: 30px 15px 225px;" id="faces">
-        <p class="col-3 text-center text-white">Mírate en un espejo sin forzar tu expresión y selecciona la imagen que más se parezca a la tuya</p>
-        <div class="col-11"></div>
-        <img src="../static/img/super-happy.jpg" alt="sad" class="col-2">
-        <img src="../static/img/angry.jpg" alt="sad" class="col-2">
-        <img src="../static/img/happy.jpg" alt="sad" class="col-2">
-        <div class="col-11 m-2"></div>
-        <img src="../static/img/serious.png" alt="sad" class="col-2">
-        <img src="../static/img/sad.jpg" alt="sad" class="col-2">
-        <div class="col-12"></div>
-        <a href="#pain" class="col">
-            <button type="button" class="btn btn-success m-3 text-white">Siguiente</button>     
-        </a>
+<form action="{% url 'test_result' %}">
+    <div class="container-fluid background_3">
+        <div class="row text-center justify-content-center align-item-center" style="padding: 30px 15px 225px;" id="faces">
+            <p class="col-3 text-center text-white">Mírate en un espejo sin forzar tu expresión y selecciona la imagen que más se parezca a la tuya</p>
+            <div class="col-11"></div>
+            <label class="col-3">
+                <input type="radio" name="face" value="in-love" checked>
+                <img src="../static/img/super-happy.jpg" alt="in-love" widht="138.5" height="158.7">
+            </label>
+            <label class="col-3">
+                <input type="radio" name="face" value="angry">
+                <img src="../static/img/angry.jpg" alt="angry" widht="138.5" height="158.7">
+            </label>
+            <label class="col-3">
+                <input type="radio" name="face" value="happy">
+                <img src="../static/img/happy.jpg" alt="happy" widht="138.5" height="158.7">
+            </label>
+            <div class="col-11 m-2"></div>
+            <label class="col-3">
+                <input type="radio" name="face" value="neutral">
+                <img src="../static/img/serious.png" alt="neutral" widht="130" height="158.7">
+            </label>
+            <label class="col-3">
+                <input type="radio" name="face" value="sad">
+                <img src="../static/img/sad.jpg" alt="sad" widht="138.5" height="158.7">
+            </label>      
+            <div class="col-12"></div>
+            <a href="#pain" class="col">
+                <button type="button" class="btn btn-success m-3 text-white">Siguiente</button>     
+            </a>
+        </div>
     </div>
-</div>
-<div class="container-fluid background">
-    <div class="row text-center justify-content-center align-item-center text-white" style="padding: 100px 15px 125px;" id="pain">
-        <p class="col-3">¿Sientes dolor en alguna parte de tu cuerpo?
-        </p>
-        <div class="col-11"></div>
-        <img src="../static/img/head.png" alt="head" class="col-2">
-        <img src="../static/img/chest.png" alt="chest" class="col-2">
-        <img src="../static/img/back.png" alt="back" class="col-2">
-        <div class="col-11 m-3"></div>
-        <img src="../static/img/stomach.png" alt="stomach" class="col-2">
-        <img src="../static/img/nothing.png" alt="nothing" class="col-2">
-        <div class="col-12 m-3"></div>
-        <a href="#song" class="col">
-            <button type="button" class="btn btn-warning m-2">Siguiente</button>    
-        </a>
+    <div class="container-fluid background">
+        <div class="row text-center justify-content-center align-item-center text-white" style="padding: 100px 15px 125px;" id="pain">
+            <p class="col-3">¿Sientes dolor en alguna parte de tu cuerpo?
+            </p>
+            <div class="col-11"></div>
+            <label class="col-3">
+                <input type="radio" name="dolor" value="neutral">
+                <img src="../static/img/head.png" alt="head" widht="138.5" height="158.7">
+            </label> 
+            <label class="col-3">
+                <input type="radio" name="dolor" value="in-love">
+                <img src="../static/img/chest.png" alt="chest" widht="138.5" height="158.7">
+            </label> 
+            <label class="col-3">
+                <input type="radio" name="dolor" value="angry">
+                <img src="../static/img/back.png" alt="back" widht="138.5" height="158.7">
+            </label> 
+            <div class="col-11 m-3"></div>
+            <label class="col-3">
+                <input type="radio" name="dolor" value="sad">
+                <img src="../static/img/stomach.png" alt="stomach" widht="138.5" height="158.7">
+            </label> 
+            <label class="col-3">
+                <input type="radio" name="dolor" value="happy">
+                <img src="../static/img/nothing.png" alt="nothing" widht="138.5" height="158.7">
+            </label> 
+            <div class="col-12 m-3"></div>
+            <a href="#song" class="col">
+                <button type="button" class="btn btn-warning m-2">Siguiente</button>    
+            </a>
+        </div>
     </div>
-</div>
-<div class="container-fluid background_4">
-    <div class="row text-center justify-content-center align-item-center text-white" style="padding: 100px 15px;" id="song">
-        <p class="col-3">¿Con qué canción te identificas más?</p>
-        <div class="col-12"></div>   
-        <iframe class="col-3 p-2 border border-warning bg-warning" title="serious" 
-        src="https://www.youtube.com/embed/8ELnhjGw4Zs" frameborder="0"></iframe>
-        <iframe class="col-3" title="angry" 
-        src="https://www.youtube.com/embed/YR5ApYxkU-U?start=170" 
-        frameborder="0" ></iframe> 
-        <iframe class="col-3" frameborder="0" title="happy" 
-            src="https://www.youtube.com/embed/e1FN047_LT0">
-        </iframe>    
-        <div class="col-12 m-4"></div>   
-        <iframe class="col-3"frameborder="0" title="super-happy" 
-            src="https://www.youtube.com/embed/myCuDnWqM-s?start=28">
-        </iframe>  
-        <div class="col-1"></div>  
-        <iframe class="col-3" frameborder="0" title="sad" 
-            src="https://www.youtube.com/embed/REQFEDi4RrE">
-        </iframe>    
-        <div class="col-12 m-3"></div>
-        <a href="#resultado" class="col">
-            <button type="button" class="btn btn-success m-2">Siguiente</button>    
-        </a>
+    <div class="container-fluid background_4">
+        <div class="row text-center justify-content-center align-item-center text-white" style="padding: 100px 15px;" id="song">
+            <p class="col-3">¿Con qué canción te identificas más?</p>
+            <div class="col-12"></div>   
+            <label class="col-4">
+                <input type="radio" name="cancion" value="neutral">
+                    <iframe title="serious" 
+                    src="https://www.youtube.com/embed/8ELnhjGw4Zs" frameborder="0" widht="138.5" height="158.7">
+                </iframe>
+            </label> 
+            <label class="col-4">
+                <input type="radio" name="cancion" value="in-love">
+                <iframe frameborder="0" title="super-happy" widht="138.5" height="158.7"
+                src="https://www.youtube.com/embed/myCuDnWqM-s?start=28">
+            </iframe> 
+            </label> 
+            <label class="col-4">
+                <input type="radio" name="cancion" value="angry">
+                <iframe title="angry" 
+                src="https://www.youtube.com/embed/YR5ApYxkU-U?start=170" 
+                frameborder="0" widht="138.5" height="158.7"></iframe> 
+            </label> 
+            <div class="col-11 m-3"></div>
+            <label class="col-4">
+                <input type="radio" name="cancion" value="sad">
+                <iframe frameborder="0" title="sad" widht="138.5" height="158.7"
+                src="https://www.youtube.com/embed/REQFEDi4RrE">
+            </iframe>    
+            </label> 
+            <label class="col-4">
+                <input type="radio" name="cancion" value="happy">
+                <iframe frameborder="0" title="happy" widht="138.5" height="158.7"
+                src="https://www.youtube.com/embed/e1FN047_LT0">
+            </iframe>  
+            </label> 
+            <div class="col-11 m-3"></div>
+            <button type="submit" class="col-1 btn btn-success m-2">Calcular resultado</button>    
+        </div>
     </div>
-</div>
-<div class="container-fluid background_6">
-    <div class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;" id="resultado">
-        <h1 class="display-3"><strong>Resultado</strong></h1>
-        <h3 class="col-12 display-5 m-3">Sientes <strong class="text-danger">ira</strong></h3>
-        <p class="col-12 emojis">&#128545;</p>
-        <p class="col-3 text-dark bg-light">Toma un tiempo para analizar tus respuestas e ir más profundo &#x1f441;</p>
-        <div class="col-11"></div>
-        <h1 class="col-12 display-5 m-2">Te recomendamos</h1> 
-        <p class="col-7 offset-5 text-left">Tomar <a href="#" class="text-danger">esta meditación</a></p>
-        <p class="col-7 offset-5 text-left">Leer <a href="#" class="text-danger">este artículo</a></p>
-        <p class="col-7 offset-5 text-left">Hablar con nuestro psicólogo <a href="#" class="text-danger">especialista en ira</a></p>
-        <p class="col-7 offset-5 text-left">Relajarte con <a href="#" class="text-danger">esta playlist</a></p>
-        {% bs_icon 'spotify' size='30px' color='#55C94B'%}
-        <p class="col-12 link-info m-4"><a href="#">Agregarlo a mis entradas</a></p>
-        <a href="#" class="col-5 link-info">Ver mis respuestas</a>
-        <div class="col-11"></div>
-        <button type="col-1 button" class="btn btn-info m-4">Volver a intentar</button> 
-        <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
-    </div>
-</div>
-
+</form>
 {% endblock %}
 {% block trademark %}<p class="font-weight-normal text-dark fw-bold">&#0169;Emotions On Page, Inc.</p>{% endblock %}
 {% block link1 %}<a href="{% url 'privacy' %}" class="link-info">Privacidad</a>{% endblock %}

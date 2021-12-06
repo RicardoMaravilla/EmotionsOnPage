@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load bootstrap_icons %}
+{% block title %}<title>Test</title>{% endblock %}
+{% block background %}<body class="background_6">{% endblock %}
+{% block logo-color %}<h1 class="title_dark p-2">Emotions on Page</h1>{% endblock %}
+{% block content %}
+<div class="container-fluid background_6">
+    <!-- Enamorado -->
+    <div id="in-love" class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;">
+        <h1 class="display-3"><strong>Resultado</strong></h1>
+        <h3 class="col-12 display-5 m-3">Sientes <strong class="text-danger">amor</strong></h3>
+        <p class="col-12 emojis">&#128525;</p>
+        <p class="col-3 text-dark bg-light">¡Felicidades! Esperamos tengas más días como este. Otro de los casos es que quizás no estés enamorado/a precisamente, pero tus sentimientos ahora son muy parecidos al amor, al bienestar con los demás, hacia algún logro o simplemente te sientes muy confortable contigo mismo. Toma un tiempo para analizar tus respuestas e ir más profundo &#x1f441;</p>
+        <div class="col-11"></div>
+        <h1 class="col-12 display-5 m-2">Te recomendamos</h1> 
+        <p class="col-7 text-left">Compartir tu bienestar con los que amas, ¡contagia a los demás de tu buena vibra! O si lo prefieres, puedes tomar <a href="#" class="text-danger">esta meditación</a> para aumentar aún más tu bienestar o al menos prolongarlo por más tiempo</p>
+        <p class="col-7 text-left">Puedes leer <a href="#" class="text-danger">este artículo</a> si quieres saber más acerca de las emociones positivas, el amor y todo acerca sobre tu estado de ánimo de ahora mismo.</p>
+        <p class="col-7 text-left">Si tienes alguna duda puedes hablar con nuestros psicólogos <a href="#" class="text-danger">expertos en amor</a></p>
+        <p class="col-7 text-left">O si simplemente quieres disfrutar el momento, escucha <a href="#" class="text-danger">esta playlist</a></p>
+        <p class="col-7">{% bs_icon 'spotify' size='30px' color='#55C94B'%}</p> 
+        <p class="col-12 link-info m-4"><a href="{% url 'journal' %}">Agregarlo a mis entradas</a></p>
+        <div class="col-11"></div>
+        <a href="{% url 'test_emotions' %}" class="col-1 btn btn-info m-4">Volver a intentar</a> 
+        <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
+    </div>
+    <!-- Feliz -->
+    <div id="happy" class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;">
+        <h1 class="display-3"><strong>Resultado</strong></h1>
+        <h3 class="col-12 display-5 m-3">Sientes <strong class="text-warning">alegría</strong></h3>
+        <p class="col-12 emojis">&#128513;</p>
+        <p class="col-3 text-dark bg-light">¡Sigue así! Toma un tiempo para analizar tus respuestas e ir más profundo &#x1f441;</p>
+        <div class="col-11"></div>
+        <h1 class="col-12 display-5 m-2">Te recomendamos</h1> 
+        <p class="col-7 offset-5 text-left">Tomar <a href="#" class="text-warning">esta meditación</a></p>
+        <p class="col-7 offset-5 text-left">Leer <a href="#" class="text-warning">este artículo</a></p>
+        <p class="col-7 offset-5 text-left">Si tienes alguna duda, puedes hablar con<a href="#" class="text-warning"> nuestros psicólogos</a></p>
+        <p class="col-7 offset-5 text-left">Puedes seguir disfrutando el día con <a href="#" class="text-warning">esta playlist</a></p>
+        <p class="col-7">{% bs_icon 'spotify' size='30px' color='#55C94B'%}</p> 
+        <p class="col-12 link-info m-4"><a href="{% url 'journal' %}">Agregarlo a mis entradas</a></p>
+        <div class="col-11"></div>
+        <a href="{% url 'test_emotions' %}" class="col-1 btn btn-info m-4">Volver a intentar</a> 
+        <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
+    </div>
+    <!-- Neutral -->
+    <div id="neutral" class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;">
+        <h1 class="display-3"><strong>Resultado</strong></h1>
+        <h3 class="col-12 display-5 m-3">Te sientes <strong class="text-secondary">en una zona gris</strong></h3>
+        <p class="col-12 emojis">&#128528;</p>
+        <p class="col-3 text-dark bg-light">Tu situación en particular es un tanto complicada. Toma un tiempo para analizar tus respuestas e ir más profundo &#x1f441;</p>
+        <div class="col-11"></div>
+        <h1 class="col-12 display-5 m-2">Te recomendamos</h1> 
+        <p class="col-7 text-left">Tomar <a href="#" class="text-secondary">esta meditación</a> para que puedas analizar más detalladamente lo que sientes en tu interior. Tranquilo/a, es normal por estos estados de ánimo en los que ni nosotros mismos nos entendemos. Pero aquí estamos para escucharte, no te preocupes.</p>
+        <p class="col-7 text-left">Puedes leer <a href="https://habilidadsocial.com/test-de-inteligencia-emocional/" class="text-secondary">este artículo</a> con más información para identificar tus emociones</p>
+        <p class="col-7 text-left">Hablar con nuestro psicólogo <a href="#" class="text-secondary">especialista en introspección</a> te ayudará a llegar a las respuestas que necesitas</p>
+        <p class="col-7 text-left">O simplemente puedes relajarte con <a href="#" class="text-secondary">esta playlist</a></p>
+        <p class="col-7">{% bs_icon 'spotify' size='30px' color='#55C94B'%}</p> 
+        <p class="col-12 link-info m-4"><a href="{% url 'journal' %}">Agregarlo a mis entradas</a></p>
+        <div class="col-11"></div>
+        <a href="{% url 'test_emotions' %}" class="col-1 btn btn-info m-4">Volver a intentar</a> 
+        <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
+    </div>
+    <!-- Enojado -->
+    <div id="angry" class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;">
+        <h1 class="display-3"><strong>Resultado</strong></h1>
+        <h3 class="col-12 display-5 m-3">Sientes <strong class="text-danger">ira</strong></h3>
+        <p class="col-12 emojis">&#128545;</p>
+        <p class="col-3 text-dark bg-light">Toma un tiempo para analizar tus respuestas e ir más profundo &#x1f441;</p>
+        <div class="col-11"></div>
+        <h1 class="col-12 display-5 m-2">Te recomendamos</h1> 
+        <p class="col-7 offset-5 text-left">Tomar <a href="#" class="text-danger">esta meditación</a></p>
+        <p class="col-7 offset-5 text-left">Leer <a href="#" class="text-danger">este artículo</a></p>
+        <p class="col-7 offset-5 text-left">Hablar con nuestro psicólogo <a href="#" class="text-danger">especialista en ira</a></p>
+        <p class="col-7 offset-5 text-left">Relajarte con <a href="#" class="text-danger">esta playlist</a></p>
+        <p class="col-7">{% bs_icon 'spotify' size='30px' color='#55C94B'%}</p> 
+        <p class="col-12 link-info m-4"><a href="{% url 'journal' %}">Agregarlo a mis entradas</a></p>
+        <div class="col-11"></div>
+        <a href="{% url 'test_emotions' %}" class="col-1 btn btn-info m-4">Volver a intentar</a> 
+        <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
+    </div>
+    <!-- Triste -->
+    <div id="sad" class="row text-center justify-content-center align-item-center" style="padding: 40px 15px;">
+        <h1 class="display-3"><strong>Resultado</strong></h1>
+        <h3 class="col-12 display-5 m-3">Sientes <strong class="text-info">tristeza</strong></h3>
+        <p class="col-12 emojis">&#128546;</p>
+        <p class="col-3 text-dark bg-light">Toma un tiempo para analizar tus respuestas e ir más profundo &#x1f441;</p>
+        <div class="col-11"></div>
+        <h1 class="col-12 display-5 m-2">Te recomendamos</h1> 
+        <p class="col-7 offset-5 text-left">Tomar <a href="#" class="text-info">esta meditación</a></p>
+        <p class="col-7 offset-5 text-left">Leer <a href="#" class="text-info">este artículo</a></p>
+        <p class="col-7 offset-5 text-left">Hablar con nuestro psicólogo <a href="#" class="text-info">especialista en tristeza</a></p>
+        <p class="col-7 offset-5 text-left">Relajarte con <a href="#" class="text-info">esta playlist</a></p>
+        <p class="col-7">{% bs_icon 'spotify' size='30px' color='#55C94B'%}</p> 
+        <p class="col-12 link-info m-4"><a href="{% url 'journal' %}">Agregarlo a mis entradas</a></p>
+        <div class="col-11"></div>
+        <a href="{% url 'test_emotions' %}" class="col-1 btn btn-info m-4">Volver a intentar</a> 
+        <p class="col-12">¿No tienes cuenta aún? <a href="{% url 'register_user' %}" class="link-info">Registrarme</a></p>
+    </div>
+</div>
+
+{% endblock %}
+{% block trademark %}<p class="font-weight-normal text-dark fw-bold">&#0169;Emotions On Page, Inc.</p>{% endblock %}
+{% block link1 %}<a href="{% url 'privacy' %}" class="link-info">Privacidad</a>{% endblock %}
+{% block link2 %}<a href="{% url 'terms' %}" class="link-info">Términos</a>{% endblock %}
+{% block legend %}<p class="col font-weight-normal text-dark">Hecho con &hearts;</p>{% endblock %}

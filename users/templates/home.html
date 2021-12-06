@@ -107,8 +107,17 @@ Contiene las opciones que solo un usuario logueado puede ver:
         * Enojado: -10
         * Triste: -10
             -->
-       <!-- Mostrar cuando se tengan menos de 20 puntos -->
     <div class="row justify-content-center">
+        <!-- Mostrar cuando se tengan más de 50 puntos -->
+        <div class="col-5 text-center"> 
+            {% bs_icon 'check-circle-fill' size='50px' color='green'%}
+            <h3 class="fs-1 text-white">
+                Todo está bien
+            </h3>
+            <p class="fs-3 text-white">Esperamos que te mantengas con ese ánimo, ¡nunca pares de sonreír!
+                {% bs_icon 'emoji-laughing-fill' size='15px' color='yellow'%}</p>
+        </div>
+        <!-- Mostrar cuando se tengan menos de 20 puntos -->
         <div class="col-5 text-center"> 
             {% bs_icon 'exclamation-diamond-fill' size='50px' color='yellow'%}
             <h3 class="fs-1 text-white">
@@ -120,9 +129,7 @@ Contiene las opciones que solo un usuario logueado puede ver:
                 class="link-danger">este video</a> te haga sentir mejor 
                 {% bs_icon 'heart-fill' size='10px' color='red'%}</p>
         </div>
-    </div>   
-     <!-- Mostrar cuando se tengan 0 o menos -->
-    <div class="row justify-content-center">
+        <!-- Mostrar cuando se tengan 0 o menos -->
         <div class="col-5 text-center"> 
             {% bs_icon 'exclamation-diamond-fill' size='50px' color='red'%}
             <h3 class="fs-1 text-white">
@@ -136,7 +143,7 @@ Contiene las opciones que solo un usuario logueado puede ver:
                 necesitas hablar con alguien, no dudes en llamarnos
                 {% bs_icon 'heart-fill' size='10px' color='red'%}</p>
         </div>
-    </div>       
+    </div>   
     <!-- End Sugerencias -->
 </div>
 {% endblock %}

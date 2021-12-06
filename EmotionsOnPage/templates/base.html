@@ -43,20 +43,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav col-md-9 ml-md-auto">
         <li class="nav-item ">
-          <a class="nav-link" href="http://127.0.0.1:8000/" id="home">Inicio | </a>
+          <a class="nav-link text-dark" href="{% url 'index' %}" id="home">Inicio | </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'emociones' %}" id="NYF">Emociones | </a>
+          <a class="nav-link text-dark" href="{% url 'emociones' %}" id="NYF">Emociones | </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'wikis' %}" id="Wikis">Wikis | </a>
+          <a class="nav-link text-dark" href="{% url 'wikis' %}" id="Wikis">Wikis | </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="" id="wh">Ayuda | </a>
+          <a class="nav-link text-dark" href="{% url 'recomendaciones' %}" id="re">Recomendaciones | </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'recomendaciones' %}" id="re">Recomendaciones | </a>
+          <a class="nav-link text-dark" href="{% url 'test_emotions' %}" id="wh">Ayuda </a>
         </li>
       </ul>
     </div>

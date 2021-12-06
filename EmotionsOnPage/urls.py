@@ -34,6 +34,7 @@ urlpatterns = [
     path("terms/", users_views.show_terms, name="terms"), 
     path("privacy/", users_views.show_privacy, name="privacy"), 
     path("test_emotions/", users_views.show_test, name="test_emotions"), 
+    path("test_result/", users_views.show_test_result, name="test_result"), 
     path("emociones/",users_views.show_emociones,name="emociones"),
     path("recomendaciones/",users_views.show_recomendaciones,name="recomendaciones"),
     path("wikis/",users_views.show_wikis,name="wikis"),
