@@ -38,4 +38,5 @@ urlpatterns = [
     path("emociones/",users_views.show_emociones,name="emociones"),
     path("recomendaciones/",users_views.show_recomendaciones,name="recomendaciones"),
     path("wikis/",users_views.show_wikis,name="wikis"),
+    path("chat/",users_views.show_chat,name="chat"),
 ]
